@@ -6,25 +6,24 @@ End Data : 23-07-2022
 
 Shivani Pandey(web-18)
 ---------------------------------------------
-
+Earrings - Necklaces - Bracelets - Rings - Shop Social
 
 
 Abdul Quadir(web-18)
 ---------------------------------------------
-
+New - All Products
 
 
 Shrikrishna Aluri(web-19)
 ---------------------------------------------
-
+Signup-signin - header-footer
 
 
 Suraj Pratap Singh(web-19)
 ---------------------------------------------
-
+homepage
 
 
 Sanajit Jana(web-19)
 ---------------------------------------------
-
-
+Product-details - add to cart/(fav)  - checkout

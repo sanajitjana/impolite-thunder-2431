@@ -34,7 +34,7 @@ body {
   margin: auto;
 }
 #free-shipping-title {
-  margin: 80px 0px;
+  margin: 60px 0px;
   line-height: 34px;
   color: #4d4d4d;
   font-size: 16px;
@@ -197,9 +197,80 @@ body {
 #below-text {
   line-height: 29px;
 }
-
+#customer-review {
+  width: 75%;
+  margin: auto;
+}
+#cus-title {
+  font-weight: 700;
+  line-height: 27px;
+  font-size: 16px;
+  color: rgba(18, 18, 18, 0.75);
+}
+#ask-ques {
+  width: 130px;
+  height: 40px;
+  border: 1px solid #c9ac92;
+  border-radius: 5px;
+  color: #c9ac92;
+  background-color: transparent;
+}
+#add-review {
+  width: 115px;
+  height: 40px;
+  border-radius: 5px;
+  border: 1px solid #c9ac92;
+  background-color: #c9ac92;
+  color: white;
+}
+#add-review:hover,
+#ask-ques:hover {
+  cursor: pointer;
+}
+#customer-review div {
+  display: flex;
+  margin-top: 20px;
+}
+#below-ask-ques {
+  width: 130px;
+  height: 40px;
+  background-color: transparent;
+}
+#below-add-review {
+  width: 115px;
+  height: 40px;
+  background-color: transparent;
+}
+#below-ask-ques,
+#below-add-review {
+  display: block;
+  border: 3px solid transparent;
+  font-weight: 600;
+  font-size: 14px;
+  padding-bottom: 20px;
+}
+#below-ask-ques {
+  border-bottom: 4px solid #bea38c;
+}
+#below-add-review {
+  font-weight: 400;
+}
+#below-ask-ques:hover {
+  cursor: pointer;
+}
+.hr-bar {
+  margin-top: -2px;
+  border-top: 3px solid #d2d2d2;
+  margin-bottom: 35px;
+}
+#be-the-first span {
+  color: #c9ac92;
+}
 @media all and (min-width: 769px) and (max-width: 1024px) {
   #top-section {
+    width: 90%;
+  }
+  #customer-review {
     width: 90%;
   }
 }
@@ -216,6 +287,9 @@ body {
     margin-bottom: 10px;
   }
   #free-shipping {
+    width: 90%;
+  }
+  #customer-review {
     width: 90%;
   }
 }

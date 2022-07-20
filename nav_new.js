@@ -1,16 +1,24 @@
 class Product {
-  constructor(image, head, price) {
+  constructor(image, hovimage, head, price, type) {
     this.image = image;
+    this.hovimage = hovimage;
     this.head = head;
     this.price = price;
+    this.categeory = categeory;
+    this.date = date;
+    this.tag = tag;
+    this.availability = availability;
   }
 }
 
 let productData = [
   new Product(
     "https://cdn.shopify.com/s/files/1/0627/7388/7215/products/011100072-2_823x.jpg?v=1656343845",
+    "https://cdn.shopify.com/s/files/1/0627/7388/7215/products/L401022-7-3_360x.jpg?v=1645729199",
     "Crystal Clear Hook Earrings (14K)",
-    "14.00"
+    14.0,
+    "Necless",
+    "Bestselling/newfeature"
   ),
   new Product(
     "https://cdn.shopify.com/s/files/1/0627/7388/7215/products/L101016-2_823x.jpg?v=1650308683",
@@ -93,6 +101,7 @@ appendData(productData);
 
 function appendData(data) {
   data.forEach((el) => {
+    console.log(el);
     let div = document.createElement("div");
     div.setAttribute("id", "card");
     div.addEventListener("click", () => {
@@ -115,9 +124,12 @@ function appendData(data) {
   });
 }
 let getdata;
+
 getdata = JSON.parse(localStorage.getItem("CartItems")) || [];
 let goingToCart = (cartData) => {
   console.log(cartData);
   getdata.push(cartData);
   localStorage.setItem("CartItems", JSON.stringify(getdata));
+  window.location.href = "";
 };
+console.log(getdata[0].image);

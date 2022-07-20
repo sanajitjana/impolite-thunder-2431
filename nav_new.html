@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>New-Lovoda</title>
+    <style>
+      * {
+        margin: 0px;
+        padding: 0px;
+        box-sizing: border-box;
+      }
+      #container {
+        width: 80%;
+        height: auto;
+        margin: auto;
+        border: 1px solid black;
+      }
+      #products {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: repeat(auto, 400px);
+        gap: 10px;
+      }
+      #products > #card > img {
+        width: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="container">
+      <h1>New</h1>
+      <div id="head-filter"></div>
+      <div id="products"></div>
+    </div>
+  </body>
+</html>
+<script src="nav_new.js
+"></script>

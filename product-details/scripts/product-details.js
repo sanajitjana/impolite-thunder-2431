@@ -25,3 +25,22 @@ let increaseFunc = () => {
 dec.addEventListener("click", decreaseFunc);
 inc.addEventListener("click", increaseFunc);
 // end quantity counter function
+
+// product details append
+let appendProductDetails = (data) => {
+  if (!data) return;
+
+  let prod_main_img = document.getElementById("product_main_img");
+  prod_main_img.src = data.img1;
+
+  let prod_title = document.getElementById("product-title");
+  prod_title.innerText = data.head;
+
+  let prod_price = document.getElementById("price");
+  prod_price.innerText = `$${data.price}`;
+};
+
+// function invoke
+let product_details =
+  JSON.parse(localStorage.getItem("product_details")) || null;
+appendProductDetails(product_details);

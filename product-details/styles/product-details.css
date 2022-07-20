@@ -63,6 +63,7 @@ body {
   line-height: 50px;
   font-weight: 400;
   margin-top: -15px;
+  color: #121212;
 }
 .fa-star-o {
   color: #c9ac92;
@@ -195,4 +196,45 @@ body {
 }
 #below-text {
   line-height: 29px;
+}
+
+@media all and (min-width: 769px) and (max-width: 1024px) {
+  #top-section {
+    width: 90%;
+  }
+}
+@media all and (min-width: 427px) and (max-width: 768px) {
+  #top-section {
+    width: 90%;
+    grid-template-columns: 50% 45%;
+  }
+  #sidebyside-img {
+    flex-direction: column;
+  }
+  #sidebyside-img img {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+  #free-shipping {
+    width: 90%;
+  }
+}
+@media all and (max-width: 426px) {
+  #top-section {
+    width: 95%;
+    grid-template-columns: 100%;
+  }
+  #left-img-sec {
+    width: 100%;
+  }
+  #sidebyside-img {
+    display: none;
+  }
+  #sidebyside-img img {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+  #free-shipping {
+    width: 90%;
+  }
 }

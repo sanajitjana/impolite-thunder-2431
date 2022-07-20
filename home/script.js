@@ -46,13 +46,14 @@ var Data=[
         proName:"Jelly Hoop Earrings",
         price:"$25.00"
 
-    },
+    }
     
 
 
 ]
 
-displayData(Data)
+
+
 
 let displayData=(Data)=>
 {
@@ -69,3 +70,5 @@ div.append(img,p1,p2)
 document.querySelector("#box2").append(div)
 })
 }
+displayData(Data)
+console.log(Data)

@@ -1,0 +1,344 @@
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  color: #121212;
+  padding: 0;
+  margin: 0;
+}
+#container {
+  margin: auto;
+  display: flex;
+}
+#left-container {
+  width: 52%;
+  background-color: white;
+  padding-right: 50px;
+  border-right: 0.5px solid #e6e6e6;
+}
+#right-container {
+  width: 40%;
+  padding-left: 50px;
+  border-left: 0.5px solid #e6e6e6;
+  background-color: #fafafa;
+}
+#left-side {
+  width: 70%;
+  margin-top: 50px;
+  margin-left: 30%;
+}
+#right-side {
+  margin-top: 50px;
+  margin-right: 40%;
+}
+#heading-logo {
+  width: 120px;
+}
+#breadcrumb {
+  font-size: 12px;
+  display: flex;
+  gap: 8px;
+  color: rgba(61, 61, 61, 0.75);
+}
+#breadcrumb p:first-child {
+  color: #30b1fb;
+}
+#breadcrumb p:nth-child(2) {
+  font-weight: 500;
+}
+.fa-angle-right {
+  color: #121212;
+  margin-left: 8px;
+}
+#express-checkout-heading {
+  position: absolute;
+  background-color: white;
+  font-size: 14px;
+  font-weight: 500;
+  padding: 0px 10px;
+  margin-left: 175px;
+  margin-top: 10px;
+}
+#express-checkout {
+  margin-top: 20px;
+  border: 1px solid #e6e6e6;
+  padding: 20px;
+  border-radius: 6px;
+  display: flex;
+  margin-bottom: 50px;
+}
+#or {
+  position: absolute;
+  background-color: white;
+  font-size: 14px;
+  font-weight: 500;
+  padding: 0px 10px;
+  margin-left: 225px;
+  margin-top: -20px;
+  color: rgba(61, 61, 61, 0.75);
+}
+#shop-pay {
+  background-color: #481cf1;
+  color: white;
+  border: 1px solid #481cf1;
+  font-size: 18px;
+  height: 42px;
+  width: 140px;
+  border-radius: 5px;
+  margin-right: 10px;
+}
+#paypal {
+  background-color: #f2ba36;
+  color: white;
+  border: 1px solid #f2ba36;
+  margin-bottom: 10px;
+  font-size: 20px;
+  height: 42px;
+  width: 140px;
+  border-radius: 5px;
+  font-weight: 900;
+  margin-right: 10px;
+}
+#g-pay {
+  background-color: #000000;
+  color: white;
+  border: 1px solid #000000;
+  font-size: 18px;
+  height: 42px;
+  width: 140px;
+  border-radius: 5px;
+}
+#checkout:hover {
+  cursor: pointer;
+  outline: 2px solid #000000;
+}
+#shop-pay:hover {
+  background-color: #3a13d6;
+  cursor: pointer;
+}
+#paypal:hover {
+  background-color: #dda729;
+  cursor: pointer;
+}
+#g-pay:hover {
+  background-color: #000000da;
+  cursor: pointer;
+}
+.shop-pay-span {
+  background-color: white;
+  color: #5a31f4;
+  font-size: 12px;
+  font-weight: 600;
+  margin-left: 5px;
+  padding: 2px;
+  border-radius: 2px;
+}
+#contact-info {
+  display: flex;
+  justify-content: space-between;
+}
+.h3-heading {
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 23px;
+  color: #333333;
+}
+#contact-para {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 21px;
+  color: #545454;
+}
+#contact-para span {
+  color: #009cde;
+}
+#contact-para span:hover {
+  cursor: pointer;
+}
+#email-with-news {
+  display: flex;
+  gap: 10px;
+  justify-content: flex-start;
+  align-items: center;
+}
+#checkbox-box {
+  padding: 50px;
+  height: 18px;
+  width: 18px;
+  border: 1px solid rgb(209, 199, 199);
+}
+#email-with-news {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 18px;
+  color: #545454;
+}
+#checkbox-box:hover {
+  cursor: pointer;
+}
+#full-name,
+#city-state-zip {
+  width: 100%;
+  display: flex;
+  gap: 10px;
+}
+input[type="text"],
+select {
+  height: 46px;
+  padding: 0px 15px;
+  font-size: 14px;
+  border: 1px solid rgb(209, 199, 199);
+  width: 100%;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+#action-btn-area {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 70px;
+  margin-top: 30px;
+}
+#action-btn-area a {
+  text-decoration: none;
+  font-size: 14px;
+  line-height: 18px;
+  color: #129df9;
+}
+#action-btn-area button {
+  width: 183px;
+  height: 59px;
+  border-radius: 5px;
+  background-color: #000000;
+  color: white;
+  font-weight: 600;
+  font-size: 14px;
+}
+.hr-bar {
+  border: none;
+  border-bottom: 1px solid #e6e6e6;
+}
+#rule-regu {
+  display: flex;
+  gap: 20px;
+}
+#rule-regu p {
+  font-size: 12px;
+  line-height: 18px;
+  font-weight: 400;
+  color: #35abfa;
+}
+#rule-regu p:hover {
+  cursor: pointer;
+}
+#product-list {
+  margin-bottom: 20px;
+  margin-top: 70px;
+}
+#row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 25px;
+  margin-bottom: 20px;
+}
+#img-box {
+  height: 64px;
+  width: 64px;
+  border-radius: 15px;
+  position: absolute;
+  background-color: white;
+  border-radius: 8px;
+  border: 1px rgba(0, 0, 0, 0.1) solid;
+}
+#img-box p {
+  position: absolute;
+  background-color: #808080;
+  border-radius: 50%;
+  border: none;
+  color: white;
+  padding: 1px 7px;
+  display: flex;
+  align-items: center;
+  margin-left: 52px;
+  margin-top: -8px;
+}
+#img-box img {
+  width: 43px;
+  height: 64px;
+  object-fit: fill;
+  margin-left: 11px;
+}
+#che_title {
+  margin-left: 80px;
+  font-size: 14px;
+  line-height: 18px;
+  color: #323232;
+  font-weight: 500;
+}
+#che_price {
+  font-size: 14px;
+  line-height: 18px;
+  color: #323232;
+  font-weight: 500;
+}
+#coupon-box {
+  margin-top: 20px;
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+#coupon-box button {
+  height: 46px;
+  padding: 0px 15px;
+  font-size: 14px;
+  border: 1px solid rgb(209, 199, 199);
+  width: 30%;
+  background-color: #000000;
+  color: white;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+#che-submit,
+#che-total,
+#che-shipping {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+#che-submit p:first-child,
+#che-shipping p:first-child {
+  font-size: 14px;
+  line-height: 18px;
+  font-weight: 400;
+  color: #535353;
+}
+#che-submit p:last-child {
+  font-size: 14px;
+  line-height: 18px;
+  font-weight: 500;
+  color: #323232;
+}
+#che-shipping p:last-child {
+  font-size: 12px;
+  line-height: 18px;
+  font-weight: 400;
+  color: #535353;
+}
+#che-total p:first-child {
+  font-size: 16px;
+  line-height: 18px;
+  font-weight: 400;
+  color: #323232;
+}
+#che-total p:last-child {
+  font-size: 24px;
+  line-height: 24px;
+  font-weight: 500;
+  color: #323232;
+}
+#che-total p:last-child span {
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 18px;
+  color: #717171;
+}

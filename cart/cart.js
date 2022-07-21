@@ -20,8 +20,22 @@ let data = [
 ];
 localStorage.setItem("cart_items", JSON.stringify(data));
 
+// append total cart price Display
+let displayTotalPrice = () => {
+  let cart_items = JSON.parse(localStorage.getItem("cart_items")) || null;
+  if (!cart_items) return;
+  let sum = 0;
+  cart_items.forEach((element) => {
+    sum += element.count * element.price;
+  });
+  sum = sum.toFixed(2);
+  document.getElementById("subtotal").innerText = `$${sum}`;
+};
+displayTotalPrice();
+
 // cart product append function
 let totalRowPrice = 0;
+let totalCartPrice = 0;
 
 let appendFunction = (data) => {
   if (!data) return;
@@ -46,7 +60,8 @@ let appendFunction = (data) => {
     p1.setAttribute("id", "prod-title");
 
     let p2 = document.createElement("p");
-    let price = element.price.toFixed(2);
+    let price = Number(element.price);
+    price = price.toFixed(2);
     p2.innerText = `$${price}`;
     p2.setAttribute("id", "prod-price");
 
@@ -94,19 +109,6 @@ let appendFunction = (data) => {
     totalRowPrice += +total;
     p3.innerText = `$${total}`;
 
-    // decrement the counter by one
-    let qty = element.count;
-    btn1.addEventListener("click", (e) => {
-      if (qty > 1) {
-        qty--;
-        total = +total;
-        total -= element.price;
-        total = Number(total).toFixed(2);
-        p3.innerText = `$${total}`;
-      }
-      btn2.innerText = qty;
-    });
-
     // increment the counter by one
     btn3.addEventListener("click", (e) => {
       qty++;
@@ -116,6 +118,29 @@ let appendFunction = (data) => {
 
       btn2.innerText = qty;
       p3.innerText = `$${total}`;
+
+      //store updated data to LS
+      element.count = qty;
+      localStorage.setItem("cart_items", JSON.stringify(array));
+      displayTotalPrice();
+    });
+
+    // decrement the counter by one
+    let qty = element.count;
+    btn1.addEventListener("click", (e) => {
+      if (qty > 1) {
+        qty--;
+        total = +total;
+        total -= element.price;
+        total = Number(total).toFixed(2);
+        p3.innerText = `$${total}`;
+
+        // store updated data to LS
+        element.count = qty;
+        localStorage.setItem("cart_items", JSON.stringify(array));
+        displayTotalPrice();
+      }
+      btn2.innerText = qty;
     });
 
     row_price_display.append(p3);
@@ -124,4 +149,10 @@ let appendFunction = (data) => {
     products_list.append(row);
   });
 };
-appendFunction(data);
+let cart_items = JSON.parse(localStorage.getItem("cart_items")) || null;
+appendFunction(cart_items);
+
+// redirect to checkout page
+document.getElementById("checkout").addEventListener("click", () => {
+  window.location.href = "checkout.html";
+});

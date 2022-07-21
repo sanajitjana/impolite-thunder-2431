@@ -4,37 +4,40 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0"
+    />
     <title>New-Lovoda</title>
-    <style>
-      * {
-        margin: 0px;
-        padding: 0px;
-        box-sizing: border-box;
-      }
-      #container {
-        width: 80%;
-        height: auto;
-        margin: auto;
-        border: 1px solid black;
-      }
-      #products {
-        display: grid;
-        grid-template-columns: repeat(4, 1fr);
-        grid-template-rows: repeat(auto, 400px);
-        gap: 10px;
-      }
-      #products > #card > img {
-        width: 100%;
-      }
-    </style>
+    <link rel="stylesheet" href="common.css" />
+    <style></style>
   </head>
   <body>
+    <!-- Container set 80% width -->
     <div id="container">
       <h1>New</h1>
       <div id="head-filter"></div>
-      <div id="products"></div>
+      <div id="products">
+        <!-- Append the all Products Here -->
+      </div>
+
+      <div id="pages">
+        <a href="" class="page">1</a>
+        <a href="" class="page">2</a>
+        <a href="" class="page">3</a>
+        <a href="" class="page">...</a>
+        <a href="" class="page">23</a>
+        <span class="material-symbols-outlined"> </span>
+      </div>
     </div>
   </body>
 </html>
-<script src="nav_new.js
-"></script>
+<script
+  src="nav_new.js
+"
+  type="module"
+></script>
+<script
+  src="https://kit.fontawesome.com/b9900254ce.js"
+  crossorigin="anonymous"
+></script>

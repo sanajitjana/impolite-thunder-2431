@@ -1,56 +1,35 @@
-class Product {
-  constructor(image, head, price) {
-    this.image = image;
-    this.head = head;
-    this.price = price;
-  }
-}
+import object from "./Object.js";
 
-let productData = [
-  new Product(
-    "https://cdn.shopify.com/s/files/1/0627/7388/7215/products/011100072-2_823x.jpg?v=1656343845",
-    "Crystal Clear Hook Earrings (14K)",
-    "14.00"
-  ),
-  new Product(
-    "https://cdn.shopify.com/s/files/1/0627/7388/7215/products/011100072-2_823x.jpg?v=1656343845",
-    "Crystal Clear Hook Earrings (14K)",
-    "14.00"
-  ),
-];
-
-appendData(productData);
+let data = object();
+appendData(data);
 
 function appendData(data) {
   data.forEach((el) => {
-    let div = document.createElement("div");
-    div.setAttribute("id", "card");
-    div.addEventListener("mouseover", () => {
-      mouseOver();
-    });
-    div.addEventListener("mouseout", () => {
-      mouseOut();
-    });
+    if (el.category === "New") {
+      let div = document.createElement("div");
+      div.setAttribute("id", "card");
+      div.addEventListener("click", () => {
+        goingToCart(el);
+      });
 
-    let images = document.createElement("img");
-    images.src = el.image;
+      let images = document.createElement("img");
+      images.src = el.image;
 
-    let heading = document.createElement("h3");
-    heading.setAttribute("class", "heading");
-    heading.innerText = el.head;
+      let heading = document.createElement("h3");
+      heading.setAttribute("class", "heading");
+      heading.innerText = el.head;
 
-    let prices = document.createElement("p");
-    prices.innerText = "$" + el.price;
+      let prices = document.createElement("p");
+      prices.setAttribute("id", "price");
+      prices.innerText = "$" + el.price;
 
-    div.append(images, heading, prices);
-    document.getElementById("products").append(div);
+      div.append(images, heading, prices);
+      document.getElementById("products").append(div);
+    }
   });
 }
 
-function mouseOver() {
-  document.querySelector(".heading").style.color = "white";
-}
-
-function mouseOut() {
-  document.querySelector(".heading").style.color = "black";
-}
+let goingToCart = (cartData) => {
+  localStorage.setItem("CartItems", JSON.stringify(cartData));
+  window.location.href = "";
+};

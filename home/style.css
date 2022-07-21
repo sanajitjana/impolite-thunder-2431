@@ -1,3 +1,9 @@
+*{
+    margin: 0%;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: white;
+    
+}
 
 #box1{
     width: 100%;
@@ -26,7 +32,7 @@
     color: white;
     font-size: 50px;
     font-weight: 300;
-    font-style: initial;
+    font-family: sans-serif;
 
 }
 #box12>#h4{
@@ -51,7 +57,7 @@
     width: 85%;
     /* border: 1px solid red ; */
     margin: auto;
-    margin-top: 140px;
+    margin-top: 200px;
 }
 #box2>div>img{
     width: 100%;
@@ -64,9 +70,220 @@ h1{
     font-weight: 300;
     font-size: 35px;
     color:rgb(18,18,18);
+    font-family: sans-serif;
 }
+
 #pc{
     text-align: center;
     color:grey;
     font-size: 17px;
+    margin-top: 20px;
 }
+
+#box3{
+    width: 80%;
+    height: 632px ;
+    /* border: 1px solid red; */
+    margin: auto;
+    margin-top: 70px;
+    
+}
+#box31{
+    /* border:1px solid black; */
+    height:410px;
+    width:412px;
+    position: absolute;
+    left:141px;
+    top:1937px
+}
+#box32{
+    /* border: 1px solid teal; */
+    width: 200px;
+    height: 200px;
+    position: absolute;
+    top:1937px;
+    left:568px;
+}
+#box33{
+    /* border: 1px solid blue; */
+    width: 200px;
+    height: 200px;
+    position: absolute;
+    top:1937px;
+    left:782px;
+}
+#box34{
+    /* border: 1px solid green; */
+    width: 200px;
+    height: 200px;
+    position: absolute;
+    top:1937px;
+    left:995px;
+}
+#box35{
+    /* border: 1px solid green; */
+    width: 200px;
+    height: 200px;
+    position: absolute;
+    top:2148px;
+    left:568px;
+}
+#box36{
+    /* border:1px solid black; */
+    height:410px;
+    width:415px;
+    position: absolute;
+    left:782px;
+    top:2148px
+}
+#box37{
+    /* border: 1px solid green; */
+    width: 200px;
+    height: 200px;
+    position: absolute;
+    top:2363px;
+    left:141px;
+}
+#box38{
+    /* border: 1px solid green; */
+    width: 200px;
+    height: 200px;
+    position: absolute;
+    top:2363px;
+    left:355px;
+}
+#box39{
+    /* border: 1px solid green; */
+    width: 200px;
+    height: 200px;
+    position: absolute;
+    top:2363px;
+    left:568px;
+}
+
+
+
+.I{
+    width: 100%;
+    height: auto;  
+} 
+#MO{
+    color: rgb(88,90,101);
+    font-family: sans-serif;
+    text-align: center;
+    
+    border-bottom: 2px solid ;
+    width: 3.5%;
+    border-width: 5px;
+   
+    display: block;
+    margin: auto;
+    margin-top: 20px;
+     /* padding-top: 10px; */
+     cursor: pointer;
+}
+#MO:hover{
+    color: gray;
+    text-decoration: none;
+}
+#box4{
+    width: 80%;
+    height: 630px ;
+    /* border: 1px solid teal; */
+    margin: auto;
+     margin-top: 10px; 
+}
+#box41{
+    /* border:1px solid black; */
+    height:410px;
+    width:412px;
+    position: absolute;
+    left:141px;
+    top:2808x
+}
+#box42{
+    /* border: 1px solid teal; */
+    width: 200px;
+    height: 200px;
+    position: absolute;
+    top:2580px;
+    left:568px;
+}
+#box43{
+    /* border: 1px solid blue; */
+    width: 200px;
+    height: 200px;
+    position: absolute;
+    top:2580px;
+    left:782px;
+}
+#box44{
+    /* border: 1px solid green; */
+    width: 200px;
+    height: 200px;
+    position: absolute;
+    top:2580px;
+    left:995px;
+}
+#box45{
+    /* border: 1px solid green; */
+    width: 200px;
+    height: 200px;
+    position: absolute;
+    top:2792px;
+    left:568px;
+}
+#box46{
+    /* border:1px solid black; */
+    height:410px;
+    width:415px;
+    position: absolute;
+    left:782px;
+    top:2792px
+}
+#box47{
+    /* border: 1px solid green; */
+    width: 200px;
+    height: 200px;
+    position: absolute;
+    top:3004px;
+    left:141px;
+}
+#box48{
+    /* border: 1px solid green; */
+    width: 200px;
+    height: 200px;
+    position: absolute;
+    top:3004px;
+    left:355px;
+}
+#box49{
+    /* border: 1px solid green; */
+    width: 200px;
+    height: 200px;
+    position: absolute;
+    top:3004px;
+    left:568px;
+}
+@media all and (min-width:700px) and (max-width:1024px)  {
+    #box2{
+       display: grid;
+       grid-template-columns: repeat(3,1fr);
+       grid-template-rows:auto;
+       gap:10px;
+       /* width: 90%; */
+       margin: auto;
+    }
+  }
+  @media all and (min-width:400px) and (max-width:699px)  {
+    #box2{
+       display: grid;
+       grid-template-columns: repeat(2,1fr);
+       grid-template-rows:auto;
+       gap:10px;
+       /* width: 90%; */
+       margin: auto;
+    }
+  }
+  
+

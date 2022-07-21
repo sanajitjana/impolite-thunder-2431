@@ -3,3 +3,31 @@ body {
     Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   color: #121212;
 }
+
+#shop-pay {
+  background-color: #481cf1;
+  color: white;
+  border: 1px solid #481cf1;
+  margin-bottom: 10px;
+  font-size: 18px;
+  height: 54px;
+  width: 348px;
+}
+#paypal {
+  background-color: #f2ba36;
+  color: white;
+  border: 1px solid #f2ba36;
+  margin-bottom: 10px;
+  font-size: 20px;
+  height: 54px;
+  width: 348px;
+  font-weight: 900;
+}
+#g-pay {
+  background-color: #000000;
+  color: white;
+  border: 1px solid #000000;
+  font-size: 18px;
+  height: 54px;
+  width: 348px;
+}

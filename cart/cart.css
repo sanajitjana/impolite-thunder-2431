@@ -118,6 +118,88 @@ body {
 .fa-trash-o:hover {
   cursor: pointer;
 }
+#afterpay {
+  font-size: 14px;
+  line-height: 16px;
+  color: rgba(61, 61, 61, 0.75);
+  line-height: 29px;
+  margin-bottom: 25px;
+  margin-top: -10px;
+}
+#afterpay span {
+  background-color: #b2fce4;
+  color: #121212;
+  padding: 0px 10px 5px 10px;
+  border-radius: 50px;
+  font-weight: bolder;
+}
+#payment-option-sec {
+  width: 75%;
+  margin: auto;
+  text-align: right;
+}
+#subtotal {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 16px;
+  color: #121212;
+}
+#payment-option-sec .text {
+  font-size: 14px;
+}
+.text a {
+  color: #121212;
+  text-decoration: none;
+  border: none;
+  border-bottom: 1px solid #121212;
+  margin-top: 100px;
+}
+.text a:hover {
+  border-bottom: 2px solid #121212;
+}
+#checkout {
+  height: 45px;
+  width: 348px;
+  margin-bottom: 20px;
+  background-color: #121212;
+  color: white;
+  font-size: 14px;
+}
+#shop-pay {
+  background-color: #481cf1;
+  color: white;
+  border: 1px solid #481cf1;
+  margin-bottom: 10px;
+  font-size: 18px;
+  height: 54px;
+  width: 348px;
+}
+#paypal {
+  background-color: #f2ba36;
+  color: white;
+  border: 1px solid #f2ba36;
+  margin-bottom: 10px;
+  font-size: 20px;
+  height: 54px;
+  width: 348px;
+  font-weight: 900;
+}
+#g-pay {
+  background-color: #000000;
+  color: white;
+  border: 1px solid #000000;
+  font-size: 18px;
+  height: 54px;
+  width: 348px;
+}
+.shop-pay-span {
+  background-color: white;
+  color: #5a31f4;
+  font-size: 12px;
+  margin-left: 5px;
+  padding: 2px;
+  border-radius: 2px;
+}
 @media all and (min-width: 769px) and (max-width: 1024px) {
   #cart-sec {
     width: 90%;

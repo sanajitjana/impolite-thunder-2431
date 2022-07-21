@@ -1,3 +1,8 @@
+
+
+
+
+
 let users=JSON.parse(localStorage.getItem("Students")) || [];
 
 class User{
@@ -22,7 +27,7 @@ class User{
             users.push(this);
             localStorage.setItem("Students",JSON.stringify(users));
             alert("Registered");
-            location.href="studentlogin.html";
+            location.href="login.html";
         }
     }
 

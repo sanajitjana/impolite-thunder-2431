@@ -115,6 +115,9 @@ body {
   line-height: 24px;
   font-weight: 400;
 }
+.fa-trash-o:hover {
+  cursor: pointer;
+}
 @media all and (min-width: 769px) and (max-width: 1024px) {
   #cart-sec {
     width: 90%;

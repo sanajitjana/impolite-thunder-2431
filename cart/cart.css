@@ -164,6 +164,7 @@ body {
   background-color: #121212;
   color: white;
   font-size: 14px;
+  outline: 1px solid #000000;
 }
 #shop-pay {
   background-color: #481cf1;
@@ -191,6 +192,22 @@ body {
   font-size: 18px;
   height: 54px;
   width: 348px;
+}
+#checkout:hover {
+  cursor: pointer;
+  outline: 2px solid #000000;
+}
+#shop-pay:hover {
+  background-color: #3a13d6;
+  cursor: pointer;
+}
+#paypal:hover {
+  background-color: #dda729;
+  cursor: pointer;
+}
+#g-pay:hover {
+  background-color: #000000da;
+  cursor: pointer;
 }
 .shop-pay-span {
   background-color: white;

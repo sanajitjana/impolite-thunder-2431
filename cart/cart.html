@@ -1,0 +1,68 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lovoda</title>
+    <link
+      rel="shortcut icon"
+      href="https://cdn.shopify.com/s/files/1/0627/7388/7215/files/Favicon_32x32.jpg?v=1650456214"
+      type="image/x-icon"
+    />
+
+    <!-- custom css -->
+    <link rel="stylesheet" href="./cart.css" />
+
+    <!-- font-awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css"
+      integrity="sha512-5A8nwdMOWrSz20fDsjczgUidUBR8liPYU+WymTZP1lmY9G6Oc7HlZv156XqnsgNUzTyMefFTcsFH/tnJE/+xBg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body>
+    <div id="container">
+      <div id="cart-sec">
+        <h1>Your cart</h1>
+        <a href="shop-all.html">Continue shopping</a>
+      </div>
+      <div id="cart-table">
+        <div id="table-heading">
+          <p>PRODUCT</p>
+          <p>QUANTITY</p>
+          <p>TOTAL</p>
+        </div>
+        <hr class="hr-bar" />
+        <div id="products-list">
+          <div id="row">
+            <div id="img-secc">
+              <img
+                src="https://cdn.shopify.com/s/files/1/0627/7388/7215/products/040500130-2__40145_300x.jpg?v=1645114548"
+                alt=""
+              />
+              <div id="prod_description">
+                <p id="prod-title">A Toast To You RIng | Rose Gold (14K)</p>
+                <p id="prod-price">$20.00</p>
+              </div>
+            </div>
+            <div id="btn-action">
+              <div id="counter">
+                <button id="dec">-</button>
+                <button id="count-num">10</button>
+                <button id="inc">+</button>
+              </div>
+              <i class="fa fa-trash-o" aria-hidden="true"></i>
+            </div>
+            <div id="row-price-display">
+              <p>$20.00</p>
+            </div>
+          </div>
+        </div>
+        <hr class="hr-bar" />
+      </div>
+      <script src="cart.js"></script>
+    </div>
+  </body>
+</html>

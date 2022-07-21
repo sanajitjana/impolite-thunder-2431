@@ -1,0 +1,164 @@
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  color: #121212;
+}
+#cart-sec {
+  width: 75%;
+  margin: auto;
+  margin-top: 80px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+#cart-sec h1 {
+  font-weight: 400;
+  font-size: 40px;
+  line-height: 52px;
+}
+#cart-sec a {
+  color: #121212;
+  text-decoration: none;
+  border-bottom: 1px solid #121212;
+}
+#cart-sec a:hover {
+  border-bottom: 2px solid #121212;
+}
+#cart-table {
+  width: 75%;
+  margin: auto;
+}
+#table-heading {
+  display: grid;
+  grid-template-columns: 50% 20% 20%;
+  grid-template-rows: auto;
+  gap: 50px;
+}
+#table-heading p {
+  font-size: 10px;
+  line-height: 12px;
+  color: rgba(61, 61, 61, 0.75);
+}
+#table-heading p:last-child {
+  text-align: right;
+}
+.hr-bar {
+  border: none;
+  border-top: 1px solid #e7e7e7;
+  margin-bottom: 40px;
+}
+#row {
+  display: grid;
+  grid-template-columns: 50% 20% 20%;
+  grid-template-rows: auto;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 50px;
+  gap: 50px;
+}
+#img-secc {
+  display: flex;
+  gap: 0px 40px;
+}
+#img-secc img {
+  height: 164px;
+  width: 110px;
+}
+#prod_description p {
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 20px;
+}
+#prod_description p:first-child {
+  border-bottom: 2px solid transparent;
+}
+#prod_description p:first-child:hover {
+  border-bottom: 2px solid #121212;
+  cursor: pointer;
+}
+#prod_description p:last-child {
+  color: rgba(61, 61, 61, 0.75);
+  margin-top: -10px;
+}
+#counter {
+  max-width: 140px;
+  height: 50px;
+  border: 1px solid rgba(123, 123, 123, 0.75);
+  display: flex;
+  align-items: center;
+}
+#counter button {
+  margin: auto;
+  height: 50px;
+  width: 45px;
+  font-size: 16px;
+  border: none;
+  background-color: transparent;
+  color: rgba(26, 26, 26, 0.75);
+}
+#counter button:first-child {
+  font-size: 30px;
+  cursor: pointer;
+}
+#counter button:last-child {
+  font-size: 22px;
+  cursor: pointer;
+}
+#btn-action {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+#row-price-display {
+  text-align: right;
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 400;
+}
+.fa-trash-o:hover {
+  cursor: pointer;
+}
+@media all and (min-width: 769px) and (max-width: 1024px) {
+  #cart-sec {
+    width: 90%;
+  }
+  #cart-table {
+    width: 90%;
+  }
+}
+@media all and (min-width: 427px) and (max-width: 768px) {
+  #cart-sec {
+    width: 90%;
+  }
+  #cart-table {
+    width: 90%;
+  }
+  #table-heading {
+    gap: 30px;
+  }
+  #row {
+    gap: 30px;
+  }
+}
+@media all and (max-width: 426px) {
+  #cart-sec {
+    width: 90%;
+  }
+  #cart-table {
+    width: 90%;
+  }
+  #table-heading p:nth-child(2) {
+    display: none;
+  }
+  #table-heading p:last-child {
+    display: none;
+  }
+  #row {
+    flex-direction: column;
+    grid-template-columns: 100%;
+    gap: 10px 0px;
+  }
+  #table-heading p:last-child {
+    text-align: left !important;
+  }
+}

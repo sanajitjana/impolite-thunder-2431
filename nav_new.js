@@ -1,9 +1,8 @@
 import object from "./Object.js";
-import appenfunc fomr ""
 
 let data = object();
-let product_table=document
-appenfunc(data, product_table)
+let product_table = document;
+appenfunc(data, product_table);
 
 // appendData(productData);
 function newLovoda() {

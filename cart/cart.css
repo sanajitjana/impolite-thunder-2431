@@ -207,6 +207,9 @@ body {
   #cart-table {
     width: 90%;
   }
+  #payment-option-sec {
+    width: 90%;
+  }
 }
 @media all and (min-width: 427px) and (max-width: 768px) {
   #cart-sec {
@@ -220,6 +223,9 @@ body {
   }
   #row {
     gap: 30px;
+  }
+  #payment-option-sec {
+    width: 90%;
   }
 }
 @media all and (max-width: 426px) {
@@ -242,5 +248,9 @@ body {
   }
   #table-heading p:last-child {
     text-align: left !important;
+  }
+  #payment-option-sec {
+    width: 90%;
+    text-align: center;
   }
 }

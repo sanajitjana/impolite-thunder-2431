@@ -95,6 +95,7 @@ let appendFunction = (data) => {
       array.splice(index, 1);
       localStorage.setItem("cart_items", JSON.stringify(array));
       appendFunction(array);
+      displayTotalPrice();
     });
 
     counter.append(btn1, btn2, btn3);

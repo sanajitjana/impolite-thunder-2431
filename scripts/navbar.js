@@ -12,7 +12,7 @@ let navbar = () => {
       <img
         id="lovoda-img"
         src="https://cdn.shopify.com/s/files/1/0627/7388/7215/files/04122019_logo2_90x.png?v=1645644264"
-        alt=""
+        alt="lovoda-logo"
       />
     </div>
     <div id="menus">
@@ -35,7 +35,7 @@ let navbar = () => {
     </a>
     <a href="cart.html">      
       <i class="fa fa-shopping-bag" aria-hidden="true"></i>
-      <button id="total-cart-item">1</button>
+      <p id="total-cart-item"></p>
     </a>
   </div>
 </div>`;

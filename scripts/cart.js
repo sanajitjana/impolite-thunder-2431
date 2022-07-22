@@ -1,3 +1,10 @@
+import { navbar, footer } from "./navbar.js";
+let navbarContainer = document.getElementById("navbar");
+let footerContainer = document.getElementById("footer");
+
+navbarContainer.innerHTML = navbar();
+// footerContainer.innerHTML = footer();
+
 let data = [
   {
     img: "https://cdn.shopify.com/s/files/1/0627/7388/7215/products/040500130-2__40145_300x.jpg?v=1645114548",
@@ -157,3 +164,16 @@ appendFunction(cart_items);
 document.getElementById("checkout").addEventListener("click", () => {
   window.location.href = "checkout.html";
 });
+
+// home redirect
+let logo = document.getElementById("logo");
+logo.addEventListener("click", () => {
+  window.location.href = "index.html";
+});
+
+//cart item count
+let displayCartCount = (data) => {
+  let total_cart_item = document.getElementById("total-cart-item");
+  total_cart_item.innerText = data.length;
+};
+displayCartCount(cart_items);

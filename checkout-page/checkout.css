@@ -232,9 +232,10 @@ select {
 }
 #product-list {
   margin-top: 70px;
+  height: auto;
   max-height: 300px;
   overflow-y: auto;
-  padding: 10px 5px;
+  padding: 20px 5px 0px 5px;
 }
 #row {
   display: flex;

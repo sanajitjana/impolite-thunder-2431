@@ -1,95 +1,60 @@
+import {navbar} from "./navbar.js"
+document.getElementById("navbar").innerHTML=navbar();
 
 
+// ------------------Signup JS---------------------------------------------//
 
+document.querySelector("form").addEventListener("submit", myfun)
 
+    let data = JSON.parse(localStorage.getItem("Userdetails")) || [];
 
-let users=JSON.parse(localStorage.getItem("Students")) || [];
+    function myfun(event) {
+        event.preventDefault();
 
-class User{
-    #password;
-    constructor(n,e,c,p){
-        this.uname=n;
-        this.email=e;
-        this.contact=c
-        this.password=p;
-    }
+        let email = document.querySelector("#email").value;
+        let contact = document.querySelector("#contact").value;
+        let password = document.querySelector("#password").value;
 
-    signup(n,e,c,p){
-        let isValidated = false;
-        isValidated = this.#validateUsername(n)&& this.#validateEmail(e) && this.#validateContact(c)  && this.#validatePassword(p);
+        let res = false;
 
-        if(isValidated){
-            this.uname=n;
-            this.email=e;
-            this.contact=c;
-            this.#password=p;
+        if (data.length == 0) {
+            res = true;
+            let dataObj = {
+                email: email,
+                contact: contact,
+                password: password,
 
-            users.push(this);
-            localStorage.setItem("Students",JSON.stringify(users));
-            alert("Registered");
-            location.href="login.html";
+            };
+            data.push(dataObj)
+        } else {
+            data.forEach(element => {
+                if (element.email == email) {
+                    res = false;
+                } else {
+                    res = true;
+                    let dataObj = {
+                        email: email,
+                        contact: contact,
+                        password: password,
+
+                    };
+                    data.push(dataObj);
+                }
+            });
+        }
+        if (res == true) {
+            alert("Data added Successfully,Now you can login");
+            localStorage.setItem("Userdetails", JSON.stringify(data));
+            location.href = "login.html";
+        } else {
+            alert("Enter different Email address");
+            location.href = "signup.html"
         }
     }
 
-    #validateUsername(username) {
-        //checking username
-        return true;
-    }
-    #validatePassword(password) {
-        //checking password
-        return true;
-    }
-    #validateEmail(email) {
-        //checking password
-        return true;
-    }
-    #validateContact(contact){
-        return true;
-    }
+    
+    // -----------------------------------signup JS Ends-----------------------------------//
 
-    login(email, password) {
-        let res=false,count=0;
-        students.forEach(element => {
-        console.log(email,password)
-        console.log(element.email,element.password)
-            if (email === element.email && password === element.password) {
-                res=true;
-                count++;
-            }
-        });
-        console.log(res,count)
-        if(res==true && count>0){
-            alert("Logged In!");
-            location.href="Home.html"
-        }else{
-            alert("Authentication failed");
-            
-        }
-    }
+    import { footer } from "./navbar.js";
+    document.getElementById("footer").innerHTML=footer();
 
-}
-
-// signup
-let data;
-let signupform = ()=>{
-    event.preventDefault();
-    let name=document.querySelector("#uname").value;
-    let email=document.querySelector("#email").value;
-    let contact=document.querySelector("#contact").value;
-    let password=document.querySelector("#password").value;
-    console.log(name,email,password);
-
-    data=new User(name,email,contact,password);
-    data.signup(name,email,contact,password);
-    console.log(users);
-}
-
-let login=()=>{
-    event.preventDefault();
-    let email=document.querySelector("#email").value;
-    let password=document.querySelector("#password").value;
-
-    console.log(email,password)
-    data=new User(email,password);
-    data.login(email,password);
-}

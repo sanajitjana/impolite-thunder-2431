@@ -33,8 +33,9 @@ let navbar = () => {
     <a href="login.html" id="login-icon">
       <i class="fa fa-user-o" aria-hidden="true"></i>
     </a>
-    <a href="cart.html">
+    <a href="cart.html">      
       <i class="fa fa-shopping-bag" aria-hidden="true"></i>
+      <button id="total-cart-item">1</button>
     </a>
   </div>
 </div>`;

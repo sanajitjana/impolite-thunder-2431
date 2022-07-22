@@ -236,6 +236,15 @@ body {
   #floting-text-box {
     margin-left: 350px;
   }
+  #product-list {
+    width: 90%;
+  }
+  .img-box {
+    height: 375px;
+  }
+  #grid-img-list {
+    width: 90%;
+  }
 }
 @media all and (min-width: 427px) and (max-width: 768px) {
   #banner {
@@ -244,14 +253,24 @@ body {
   #floting-text-box {
     margin-left: 220px;
   }
+  #product-list {
+    width: 90%;
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .img-box {
+    height: 325px;
+  }
+  #grid-img-list {
+    width: 90%;
+  }
 }
 @media all and (min-width: 376px) and (max-width: 426px) {
   #banner {
-    width: 100vh;
+    width: 105vh;
     height: 430px;
   }
   #layer {
-    width: 100vh;
+    width: 105vh;
     height: 430px;
   }
   #floting-text-box {
@@ -260,6 +279,42 @@ body {
   }
   #floting-text-box h1 {
     font-size: 32px;
+  }
+  #product-list {
+    margin-top: -250px;
+    width: 90%;
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .img-box {
+    height: 290px;
+  }
+  #shop {
+    font-size: 30px;
+    margin-top: 30px;
+    margin-bottom: -70px;
+  }
+  #pc {
+    font-size: 14px;
+    margin-bottom: 30px;
+  }
+  #grid-img-list {
+    width: 90%;
+  }
+  #shop-feed-list {
+    margin-bottom: 30px;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(auto, auto);
+    grid-template-areas:
+      "A A"
+      "A A"
+      "B C"
+      "D E"
+      "F F"
+      "F F"
+      "G H"
+      "I I";
+    gap: 0px;
+    margin-bottom: 10px;
   }
 }
 @media all and (max-width: 376px) {
@@ -277,5 +332,41 @@ body {
   }
   #floting-text-box h1 {
     font-size: 32px;
+  }
+  #product-list {
+    margin-top: -250px;
+    width: 90%;
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .img-box {
+    height: 255px;
+  }
+  #shop {
+    font-size: 30px;
+    margin-top: 30px;
+    margin-bottom: -70px;
+  }
+  #pc {
+    font-size: 14px;
+    margin-bottom: 30px;
+  }
+  #grid-img-list {
+    width: 90%;
+  }
+  #shop-feed-list {
+    margin-bottom: 30px;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(auto, auto);
+    grid-template-areas:
+      "A A"
+      "A A"
+      "B C"
+      "D E"
+      "F F"
+      "F F"
+      "G H"
+      "I I";
+    gap: 0px;
+    margin-bottom: 10px;
   }
 }

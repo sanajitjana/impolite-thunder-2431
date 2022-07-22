@@ -59,6 +59,7 @@ let displayData=(Data)=>
 {
 Data.forEach((el)=>{
 let div=document.createElement("div");
+// {/* <i class="fa-solid fa-circle-heart"></i> */}
 let img=document.createElement("img")
 img.src=el.img
 let p1=document.createElement("p")

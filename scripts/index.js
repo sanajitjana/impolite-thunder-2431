@@ -3,7 +3,7 @@ let navbarContainer = document.getElementById("navbar");
 let footerContainer = document.getElementById("footer");
 
 navbarContainer.innerHTML = navbar();
-footerContainer.innerHTML = footer();
+// footerContainer.innerHTML = footer();
 
 let productData = [
   {

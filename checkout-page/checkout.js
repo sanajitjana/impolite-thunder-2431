@@ -1,4 +1,5 @@
 let subTotal = 0;
+let subTotalWithoutDiscount = 0;
 
 // product display function
 let displayProductList = (data) => {
@@ -29,6 +30,8 @@ let displayProductList = (data) => {
     let price = document.createElement("h3");
     let totalPrice = element.count * element.price;
     subTotal += totalPrice;
+    subTotalWithoutDiscount += totalPrice;
+
     totalPrice = totalPrice.toFixed(2);
     price.innerText = `$${totalPrice}`;
     price.setAttribute("id", "che_price");
@@ -41,13 +44,103 @@ let displayProductList = (data) => {
 let cart_items = JSON.parse(localStorage.getItem("cart_items")) || null;
 displayProductList(cart_items);
 
-let displaySubTotal = (data) => {
+// display total Amount of Checkout
+let displaySubTotal = () => {
   let sub_top = document.getElementById("sub-total-top");
   let sub_bottom = document.getElementById("sub-total-bottom");
+  let sbTotal = localStorage.getItem("discountSubTotal");
 
-  data = data.toFixed(2);
-  sub_top.innerText = `$${data}`;
+  let cuponApply = localStorage.getItem("cuponApply") || null;
+  sub_top.innerText = `$${Number(subTotalWithoutDiscount).toFixed(2)}`;
 
-  sub_bottom.innerHTML = `<span>USD</span> $${data}`;
+  if (cuponApply) {
+    sub_bottom.innerHTML = `<span>USD</span> $${Number(sbTotal).toFixed(2)}`;
+  } else {
+    sub_bottom.innerHTML = `<span>USD</span> $${Number(subTotal).toFixed(2)}`;
+  }
 };
-displaySubTotal(subTotal);
+displaySubTotal();
+
+// coupon applied status function
+let apply_stat = document.querySelector("#apply-stat");
+let sheckStatus = () => {
+  let checkCupon = localStorage.getItem("cuponApply");
+  if (checkCupon) {
+    apply_stat.style.display = "block";
+    apply_stat.innerText = "Click on it to remove cupon";
+    apply_stat.style.color = "red";
+    apply_stat.style.cursor = "pointer";
+  }
+};
+sheckStatus();
+
+// display Discount Amount
+let displayDiscountAmount = () => {
+  let displayAmountLS = localStorage.getItem("discountAmount") || null;
+  let discount_amount = document.getElementById("discount-amount");
+  let cuponApply = localStorage.getItem("cuponApply");
+
+  if (cuponApply) {
+    discount_amount.innerText = `$${Number(displayAmountLS).toFixed(2)}`;
+  } else {
+    discount_amount.innerText = `$0.00`;
+  }
+};
+displayDiscountAmount();
+
+// remove the coupon
+let removeCupon = () => {
+  let checkCupon = localStorage.getItem("cuponApply");
+  if (checkCupon) {
+    apply_stat.style.display = "none";
+    localStorage.removeItem("cuponApply");
+    localStorage.removeItem("discountAmount");
+    localStorage.removeItem("discountSubTotal");
+    displayDiscountAmount();
+    displaySubTotal();
+  }
+};
+apply_stat.addEventListener("click", removeCupon);
+
+let discountAmount = 0;
+// coupon code function
+document.querySelector("#apply-btn").addEventListener("click", (e) => {
+  let cuponVal = document.querySelector("#coupon-input");
+  let discount_amount = document.querySelector("#discount-amount");
+  let checkCupon = localStorage.getItem("cuponApply");
+
+  if (checkCupon) {
+    alert("Cupon already applied");
+  } else if (cuponVal.value == "masai-30" || cuponVal.value == "lovoda-2022") {
+    if (cuponVal.value == "masai-30") {
+      discountSubTotal = Number((subTotal * 0.7).toFixed(2));
+      discountAmount = Number(subTotalWithoutDiscount - discountSubTotal);
+      localStorage.setItem("discountSubTotal", discountSubTotal);
+      localStorage.setItem("discountAmount", discountAmount);
+    } else {
+      discountSubTotal = Number((subTotal * 0.8).toFixed(2));
+      discountAmount = Number(subTotalWithoutDiscount - discountSubTotal);
+      localStorage.setItem("discountSubTotal", discountSubTotal);
+      localStorage.setItem("discountAmount", discountAmount);
+    }
+    localStorage.setItem("cuponApply", "true");
+    displaySubTotal();
+    displayDiscountAmount();
+    sheckStatus();
+  } else {
+    alert("Please enter valid cupon code");
+  }
+});
+
+// apply button color
+let coupon_input = document.getElementById("coupon-input");
+let apply_btn = document.getElementById("apply-btn");
+coupon_input.addEventListener("input", (e) => {
+  if (coupon_input.value == "") {
+    apply_btn.style.backgroundColor = "#C8C8C8";
+    apply_btn.style.pointerEvents = "none";
+  } else {
+    apply_btn.style.backgroundColor = "#000000";
+    apply_btn.style.pointerEvents = "all";
+  }
+});

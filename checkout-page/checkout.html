@@ -172,13 +172,27 @@
           <div id="product-list"></div>
           <hr class="hr-bar" />
           <div id="coupon-box">
-            <input type="text" placeholder="Gift Card or discount code" />
-            <button>Apply</button>
+            <input
+              type="text"
+              id="coupon-input"
+              placeholder="Gift Card or discount code"
+            />
+            <button id="apply-btn">Apply</button>
           </div>
+          <div id="apply-stat"></div>
+          <p id="coupon-example">
+            Coupon:
+            <span> masai-30 (flat 30%)</span>
+            <span>lovoda-2022 (flat 20%)</span>
+          </p>
           <hr class="hr-bar" />
           <div id="che-submit">
             <p>Subtotal</p>
             <p id="sub-total-top"></p>
+          </div>
+          <div id="che-discount">
+            <p>Dsicount</p>
+            <p id="discount-amount"></p>
           </div>
           <div id="che-shipping">
             <p>Shipping</p>

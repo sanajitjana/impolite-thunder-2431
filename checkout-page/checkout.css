@@ -231,8 +231,10 @@ select {
   cursor: pointer;
 }
 #product-list {
-  margin-bottom: 20px;
   margin-top: 70px;
+  max-height: 300px;
+  overflow-y: auto;
+  padding: 10px 5px;
 }
 #row {
   display: flex;
@@ -240,6 +242,7 @@ select {
   align-items: center;
   gap: 25px;
   margin-bottom: 20px;
+  position: relative;
 }
 #img-box {
   height: 64px;

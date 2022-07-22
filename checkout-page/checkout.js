@@ -106,7 +106,6 @@ let discountAmount = 0;
 // coupon code function
 document.querySelector("#apply-btn").addEventListener("click", (e) => {
   let cuponVal = document.querySelector("#coupon-input");
-  let discount_amount = document.querySelector("#discount-amount");
   let checkCupon = localStorage.getItem("cuponApply");
 
   if (checkCupon) {
@@ -144,3 +143,71 @@ coupon_input.addEventListener("input", (e) => {
     apply_btn.style.pointerEvents = "all";
   }
 });
+
+// checkout Function
+let form = document.querySelector("form");
+let orders = JSON.parse(localStorage.getItem("orders")) || [];
+
+let checkoutFunction = (event) => {
+  event.preventDefault();
+  let email_mobile = form.emailmobile.value;
+  let country = form.country.value;
+  let firstname = form.firstname.value;
+  let lastname = form.lastname.value;
+  let company = form.company.value;
+  let address = form.address.value;
+  let apartment = form.apartment.value;
+  let city = form.city.value;
+  let state = form.state.value;
+  let zipcode = form.zipcode.value;
+
+  if (email_mobile == "") {
+    alert("Please enter a email or mobile number");
+  } else if (country == "") {
+    alert("Please select a country");
+  } else if (firstname == "") {
+    alert("Please enter first name");
+  } else if (lastname == "") {
+    alert("Please enter last name");
+  } else if (address == "") {
+    alert("Please enter address");
+  } else if (city == "") {
+    alert("Please enter city");
+  } else if (state == "") {
+    alert("Please select state");
+  } else if (zipcode == "") {
+    alert("Please enter zipcode");
+  } else {
+    let flag = false;
+    while (true) {
+      let msg = prompt("We have sent a OTP, Enter this here");
+      if (msg == 1234) {
+        let newOrders = {
+          email_mobile: email_mobile,
+          country: country,
+          firstname: firstname,
+          lastname: lastname,
+          company: company,
+          address: address,
+          apartment: apartment,
+          city: city,
+          state: state,
+          zipcode: zipcode,
+          orderItems: cart_items,
+        };
+        orders.push(newOrders);
+        localStorage.setItem("orders", JSON.stringify(orders));
+        localStorage.removeItem("cart_items");
+        alert("Congratulations! your orders will be sent to your address");
+        window.location.href = "index.html";
+        flag = true;
+      } else {
+        alert("Wrong OTP!");
+        flag = false;
+      }
+      if (flag == false) continue;
+      if (flag) break;
+    }
+  }
+};
+form.addEventListener("submit", checkoutFunction);

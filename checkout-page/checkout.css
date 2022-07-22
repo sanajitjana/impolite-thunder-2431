@@ -204,7 +204,7 @@ select {
   line-height: 18px;
   color: #129df9;
 }
-#action-btn-area button {
+#submit {
   width: 183px;
   height: 59px;
   border-radius: 5px;
@@ -213,17 +213,22 @@ select {
   font-weight: 600;
   font-size: 14px;
 }
+#submit:hover {
+  cursor: pointer;
+}
 .hr-bar {
   border: none;
   border-bottom: 1px solid #e6e6e6;
 }
 #rule-regu {
   display: flex;
-  gap: 20px;
+  flex-wrap: wrap;
+  gap: 0px 20px;
+  margin-bottom: 10px;
 }
 #rule-regu p {
   font-size: 12px;
-  line-height: 18px;
+  line-height: 0px;
   font-weight: 400;
   color: #35abfa;
 }
@@ -388,15 +393,15 @@ select {
 }
 @media all and (min-width: 427px) and (max-width: 768px) {
   #left-container {
-    width: 80%;
-    padding-right: 10%;
-    padding-left: 10%;
+    width: 70%;
+    padding-right: 15%;
+    padding-left: 15%;
     border-right: none;
   }
   #right-container {
-    width: 80%;
-    padding-left: 10%;
-    padding-right: 10%;
+    width: 70%;
+    padding-left: 15%;
+    padding-right: 15%;
     border-left: none;
   }
   #left-side {

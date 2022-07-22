@@ -16,6 +16,7 @@
     <!-- custom css -->
     <link rel="stylesheet" href="./styles/index.css" />
     <link rel="stylesheet" href="./styles/navbar.css" />
+    <link rel="stylesheet" href="./styles/footer.css" />
 
     <!-- font-awesome -->
     <link
@@ -27,120 +28,26 @@
     />
   </head>
   <body>
-    <div id="navbar">
-      <div id="top-bar">
-        <p>Free Shipping on Orders Over $75 and Free Returns (US ONLY)</p>
-      </div>
-      <hr class="hr-bar" />
-      <div id="header">
-        <div id="left-bar">
-          <i class="fa fa-bars" aria-hidden="true"></i>
-        </div>
-        <div id="logo-menus">
-          <div id="logo">
-            <img
-              id="lovoda-img"
-              src="https://cdn.shopify.com/s/files/1/0627/7388/7215/files/04122019_logo2_90x.png?v=1645644264"
-              alt=""
-            />
-          </div>
-          <div id="menus">
-            <a href="index.html">Home</a>
-            <a href="new.html">New</a>
-            <a href="shop-all.html">Shop All</a>
-            <a href="earrings.html">Earrings</a>
-            <a href="necklaces.html">Necklaces</a>
-            <a href="bracelets.html">Bracelets</a>
-            <a href="rings.html">Rings</a>
-            <a href="shop-special.html">Shop Special</a>
-          </div>
-        </div>
-        <div id="right-icons">
-          <a href="javascript:void(0)">
-            <i class="fa fa-search" aria-hidden="true"></i>
-          </a>
-          <a href="login.html" id="login-icon">
-            <i class="fa fa-user-o" aria-hidden="true"></i>
-          </a>
-          <a href="cart.html">
-            <i class="fa fa-shopping-bag" aria-hidden="true"></i>
-          </a>
-        </div>
+    <div id="navbar"></div>
+    <div id="slider">
+      <div id="layer"></div>
+      <img
+        id="banner"
+        src="https://cdn.shopify.com/s/files/1/0627/7388/7215/files/13122-2_1500x.jpg?v=1645120932"
+      />
+      <div id="floting-text-box">
+        <h1>NEW NEW NEW</h1>
+        <h4>Check out the new beauties!</h4>
+        <a href="shop-all.html">Shop all</a>
       </div>
     </div>
-    <div id="box1">
-      <div id="box11">
-        <img
-          src="https://cdn.shopify.com/s/files/1/0627/7388/7215/files/13122-2_1500x.jpg?v=1645120932"
-        />
-      </div>
-      <div id="box12">
-        <h1 id="h1">NEW NEW NEW</h1>
-        <h4 id="h4">Check out the new beauties!</h4>
-        <button id="button">Shop all</button>
-      </div>
-    </div>
-    <div id="box2"></div>
+    <div id="product-list"></div>
     <h1 id="shop">SHOP THE FEED</h1>
     <p id="pc">Tag us on instagram @LovodaShop or #Lovoda</p>
-    <!-- <div id="box3">
-      <div id="box31">
-        <img
-          class="I"
-          src="https://storage.covet.pics/postassets/12327673/high_resolution/1b248440676a46ccaef5418696b6cafb"
-        />
-      </div>
-      <div id="box32">
-        <img
-          class="I"
-          src="https://storage.covet.pics/postassets/12007666/high_resolution/e914c46768434be928cbaeb7cda40f9a"
-        />
-      </div>
-      <div id="box33">
-        <img
-          class="I"
-          src="https://storage.covet.pics/postassets/11999924/high_resolution/2396933b0a70143ee84c2b0352ccc5f2"
-        />
-      </div>
-      <div id="box34">
-        <img
-          class="I"
-          src="https://storage.covet.pics/postassets/11980922/high_resolution/f8541afa692ffd452c7f1120072e233d"
-        />
-      </div>
-      <div id="box35">
-        <img
-          class="I"
-          src="https://storage.covet.pics/postassets/11953653/standard_resolution/e29739a295db25d0db7be892e71159d6"
-        />
-      </div>
-      <div id="box36">
-        <img
-          class="I"
-          src="https://storage.covet.pics/postassets/11944342/standard_resolution/91375b24accb75832681adc926fce15d"
-        />
-      </div>
-      <div id="box37">
-        <img
-          class="I"
-          src="https://storage.covet.pics/postassets/11937553/standard_resolution/de0213024a8ec64bb32839f62f8e6b39"
-        />
-      </div>
-      <div id="box38">
-        <img
-          class="I"
-          src="https://storage.covet.pics/postassets/11933882/standard_resolution/50305d19b46bd3903e4bbde66c50cf0e"
-        />
-      </div>
-      <div id="box39">
-        <img
-          class="I"
-          src="https://storage.covet.pics/postassets/11925590/standard_resolution/1666fafbb7475425048ff5e392873643"
-        />
-      </div>
-    </div> -->
-
-    <div id="below"><h4 onclick="MORE()" id="MO">MORE</h4></div>
+    <div id="grid-img-list"></div>
+    <!-- <div id="shop-feed-list"></div> -->
+    <button id="more">MORE</button>
+    <div id="footer"></div>
   </body>
+  <script src="./scripts/index.js" type="module"></script>
 </html>
-<script src="./scripts/index.js"></script>

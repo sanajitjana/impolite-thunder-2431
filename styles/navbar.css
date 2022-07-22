@@ -3,6 +3,8 @@ body {
     Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   color: #121212;
   font-weight: 400;
+  margin: 0;
+  padding: 0;
 }
 #top-bar {
   height: 40px;

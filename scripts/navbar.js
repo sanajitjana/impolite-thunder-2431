@@ -1,49 +1,47 @@
-let navbar = ()=>{
-    return `<h4>Free Shipping on Orders Over $75 and Free Returns (US ONLY)</h4>
-    <div id="contain">
-      <div id="pic">
-        <img
-          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSMfztH11XDrBo7dmRV4KxhJd9EHC7P6k29rxUFVgHjJw&s=0"
-          alt="error">
-      </div>
-      <div id="details">
-        <h3><a href="">Home</a></h3>
-        <h3><a href="">New</a></h3>
-        <h3><a href="">Shop All</a></h3>
-        <h3><a href="">Earrings</a></h3>
-        <h3><a href="">Bracelets</a></h3>
-        <h3><a href="">Necklaces</a></h3>
-        <h3><a href="">Rings</a></h3>
-        <h3><a href="">Shop All</a></h3>
-      </div>
-      <div id="search">
-        <div>
-          <a href=""> <img
-              src="data:image/jpeg;base64,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"
-              alt="error"></a>
-
-        </div>
-        <div>
-          <a href="signup.html"><img
-              src="data:image/jpeg;base64,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"
-              alt="error"></a>
-
-        </div>
-        <div>
-          <a href=""> <img
-              src="data:image/jpeg;base64,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"
-              alt="error"></a>
-
-        </div>
-
-      </div>
-
+let navbar = () => {
+  return `<div id="top-bar">
+  <p>Free Shipping on Orders Over $75 and Free Returns (US ONLY)</p>
+</div>
+<hr class="hr-bar" />
+<div id="header">
+  <div id="left-bar">
+    <i class="fa fa-bars" aria-hidden="true"></i>
+  </div>
+  <div id="logo-menus">
+    <div id="logo">
+      <img
+        id="lovoda-img"
+        src="https://cdn.shopify.com/s/files/1/0627/7388/7215/files/04122019_logo2_90x.png?v=1645644264"
+        alt=""
+      />
     </div>
-`
-}
+    <div id="menus">
+      <a href="index.html">Home</a>
+      <a href="new.html">New</a>
+      <a href="shop-all.html">Shop All</a>
+      <a href="earrings.html">Earrings</a>
+      <a href="necklaces.html">Necklaces</a>
+      <a href="bracelets.html">Bracelets</a>
+      <a href="rings.html">Rings</a>
+      <a href="shop-special.html">Shop Special</a>
+    </div>
+  </div>
+  <div id="right-icons">
+    <a href="javascript:void(0)">
+      <i class="fa fa-search" aria-hidden="true"></i>
+    </a>
+    <a href="login.html" id="login-icon">
+      <i class="fa fa-user-o" aria-hidden="true"></i>
+    </a>
+    <a href="cart.html">
+      <i class="fa fa-shopping-bag" aria-hidden="true"></i>
+    </a>
+  </div>
+</div>`;
+};
 
-let footer =()=>{
-  return`<div id="parent">
+let footer = () => {
+  return `<div id="parent">
   <div id="son1">
     <h5>Info</h5>
     <p>Search</p>
@@ -136,9 +134,7 @@ let footer =()=>{
     </div>
 
   </div>
-</div>`
-}
+</div>`;
+};
 
-
-export {navbar,footer};
-
+export { navbar, footer };

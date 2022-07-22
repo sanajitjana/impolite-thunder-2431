@@ -92,6 +92,7 @@ displayDiscountAmount();
 let removeCupon = () => {
   let checkCupon = localStorage.getItem("cuponApply");
   if (checkCupon) {
+    document.querySelector("#coupon-input").value = "";
     apply_stat.style.display = "none";
     localStorage.removeItem("cuponApply");
     localStorage.removeItem("discountAmount");
@@ -185,7 +186,7 @@ let checkoutFunction = (event) => {
   } else {
     let flag = false;
     while (true) {
-      let msg = prompt("We have sent a OTP, Enter this here");
+      let msg = prompt("We have sent a OTP, Enter this here (e.g:1234)");
       if (msg == 1234) {
         let newOrders = {
           email_mobile: email_mobile,
@@ -204,14 +205,16 @@ let checkoutFunction = (event) => {
         localStorage.setItem("orders", JSON.stringify(orders));
         localStorage.removeItem("cart_items");
         alert("Congratulations! your orders will be sent to your address");
-        window.location.href = "index.html";
         flag = true;
       } else {
         alert("Wrong OTP!");
         flag = false;
       }
       if (flag == false) continue;
-      if (flag) break;
+      if (flag) {
+        window.location.href = "index.html";
+        break;
+      }
     }
   }
 };

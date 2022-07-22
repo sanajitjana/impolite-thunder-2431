@@ -263,12 +263,13 @@ select {
   border: 1px rgba(0, 0, 0, 0.1) solid;
 }
 #img-box p {
+  font-size: 12px;
   position: absolute;
   background-color: #808080;
   border-radius: 50%;
   border: none;
   color: white;
-  padding: 1px 7px;
+  padding: 0px 5px 1px 5px;
   display: flex;
   align-items: center;
   margin-left: 52px;

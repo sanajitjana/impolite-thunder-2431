@@ -10,13 +10,79 @@
     />
     <title>New-Lovoda</title>
     <link rel="stylesheet" href="common.css" />
-    <style></style>
+    <script
+      src="https://kit.fontawesome.com/b9900254ce.js"
+      crossorigin="anonymous"
+    ></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css"
+    />
+    <style>
+      #head-filter {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        padding: 0 4rem;
+        font-family: Assistant, sans-serif;
+        font-size: 15px;
+        font-weight: 400;
+        opacity: 0.8;
+      }
+      #head-filter > div > p {
+        padding-right: 30px;
+      }
+
+      #head-filter > p {
+        padding-right: 20px;
+      }
+      #left-head {
+        width: 65%;
+        display: flex;
+        justify-content: end;
+        padding-left: 20px;
+      }
+      #left-head > div {
+        width: 60px;
+      }
+    </style>
   </head>
   <body>
     <!-- Container set 80% width -->
     <div id="container">
-      <h1>New</h1>
-      <div id="head-filter"></div>
+      <div id="heading">
+        <h1>New</h1>
+      </div>
+
+      <div id="head-filter">
+        <div>
+          <p>Filter:</p>
+        </div>
+        <div id="Price">
+          <p>Price <i class="fa fa-angle-down" aria-hidden="true"></i></p>
+        </div>
+        <div id="availibility">
+          <p>
+            Availability <i class="fa fa-angle-down" aria-hidden="true"></i>
+          </p>
+        </div>
+        <div id="left-head">
+          <div><p>Sort By:</p></div>
+          <!-- <div id="sorting" onchange="sellingProducts()"> -->
+          <select id="sort-product">
+            <option value="Featured" selected>Featured</option>
+            <option value="Bestselling">Best Selling</option>
+            <option value="A-Z">Alphabetically,A-Z</option>
+            <option value="Z-A">Alphabetically,A-Z</option>
+            <option value="low-to-high">Price,low to high</option>
+            <option value="high-to-low">Price,high to low</option>
+            <option value="old-new">Date,old to new</option>
+            <option value="new-old">Date,new to old</option>
+          </select>
+          <!-- </div> -->
+        </div>
+      </div>
+
       <div id="products">
         <!-- Append the all Products Here -->
       </div>
@@ -36,8 +102,11 @@
   src="nav_new.js
 "
   type="module"
-></script>
-<script
-  src="https://kit.fontawesome.com/b9900254ce.js"
-  crossorigin="anonymous"
-></script>
+>
+
+  document.querySelector("#sort-product").addEventListener("change",selling)
+
+  function selling(){
+    alert("hello")
+  }
+</script>

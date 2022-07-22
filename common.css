@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Asap:ital@1&family=Istok+Web&family=Kings&family=Montserrat:ital,wght@1,300&family=Open+Sans:wght@300&family=Oswald:wght@500&family=Pacifico&family=Roboto:wght@400;500&family=Ubuntu:wght@300&family=Vollkorn&display=swap");
+
 * {
   margin: 0px;
   padding: 0px;
@@ -10,10 +12,12 @@
   /* border: 1px solid black; */
 }
 #products {
+  margin-top: 36px;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: repeat(auto, 400px);
-  gap: 10px;
+  gap: 8px;
+  padding: 0 4rem;
 }
 #products > #card > img {
   width: 100%;
@@ -44,4 +48,30 @@
 }
 .material-symbols-outlined {
   font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 48;
+}
+#heading {
+  width: 100%;
+  height: 90px;
+  display: flex;
+  align-items: center;
+}
+#heading > h1 {
+  font-size: 40px;
+  font-family: "Nanum Gothic", sans-serif;
+  font-style: normal;
+  font-weight: 100;
+  margin-left: 63px;
+}
+#card h3 {
+  font-family: Assistant, sans-serif;
+  font-size: 13px;
+  font-weight: 400;
+  margin-top: 10px;
+}
+#card p {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-family: Assistant, sans-serif;
+  font-size: 13px;
+  font-weight: 400;
 }

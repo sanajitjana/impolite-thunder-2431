@@ -236,7 +236,7 @@ select {
   cursor: pointer;
 }
 #product-list {
-  margin-top: 70px;
+  margin-top: 60px;
   height: auto;
   max-height: 300px;
   overflow-y: hidden;

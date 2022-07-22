@@ -150,6 +150,11 @@ let orders = JSON.parse(localStorage.getItem("orders")) || [];
 
 let checkoutFunction = (event) => {
   event.preventDefault();
+  if (!cart_items) {
+    alert("Please add some product to cart");
+    return;
+  }
+
   let email_mobile = form.emailmobile.value;
   let country = form.country.value;
   let firstname = form.firstname.value;

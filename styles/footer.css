@@ -119,7 +119,11 @@
   font-weight: 400;
   margin-bottom: 30px;
 }
-
+#copyright span:hover {
+  cursor: pointer;
+  border: none;
+  border-bottom: 1px solid #121212;
+}
 @media all and (max-width: 1024px) {
   #f-container {
     width: 90%;

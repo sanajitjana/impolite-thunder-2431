@@ -156,7 +156,7 @@ let footer = () => {
       </div>
     </div>
   </div>
-  <p id="copyright">&copy; 2022, Lovoda Powered by Shopify</p>`;
+  <p id="copyright">&copy; 2022, <span>Lovoda</span> Powered by <span>Masai Students</span></p>`;
 };
 
 export { navbar, footer };

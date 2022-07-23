@@ -19,19 +19,34 @@ create_account.addEventListener("click", () => {
 
 //cart item count
 let cart_items = JSON.parse(localStorage.getItem("cart_items")) || [];
+let loginUser = JSON.parse(localStorage.getItem("loginUser")) || null;
 let sumCount = 0;
-let displayCartCount = (data) => {
-  if (!data) return;
+
+let displayCartCount = () => {
   let total_cart_item = document.getElementById("total-cart-item");
-  data.forEach((element) => {
-    sumCount += element.count;
-  });
-  total_cart_item.innerText = sumCount;
+  if (loginUser == null) {
+    total_cart_item.innerText = sumCount;
+  } else {
+    if (cart_items.length > 0) {
+      let elements = cart_items.filter((ele) => {
+        if (loginUser.email == ele.email) return ele;
+      });
+
+      for (let i = 0; i < elements.length; i++) {
+        let x = elements[i].cartItems;
+        for (let j = 0; j < x.length; j++) {
+          sumCount += x[j].count;
+        }
+      }
+      total_cart_item.innerText = sumCount;
+    } else {
+      total_cart_item.innerText = sumCount;
+    }
+  }
 };
-displayCartCount(cart_items);
+displayCartCount();
 
 // redirect to account/login
-let loginUser = JSON.parse(localStorage.getItem("loginUser")) || null;
 let login_icon = document.getElementById("login-icon");
 login_icon.addEventListener("click", () => {
   if (loginUser) {

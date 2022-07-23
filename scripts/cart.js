@@ -13,19 +13,34 @@ logo.addEventListener("click", () => {
 
 //cart item count
 let cart_items = JSON.parse(localStorage.getItem("cart_items")) || [];
+let loginUser = JSON.parse(localStorage.getItem("loginUser")) || null;
 let sumCount = 0;
-let displayCartCount = (data) => {
-  if (!data) return;
+
+let displayCartCount = () => {
   let total_cart_item = document.getElementById("total-cart-item");
-  data.forEach((element) => {
-    sumCount += element.count;
-  });
-  total_cart_item.innerText = sumCount;
+  if (loginUser == null) {
+    total_cart_item.innerText = sumCount;
+  } else {
+    if (cart_items.length > 0) {
+      let elements = cart_items.filter((ele) => {
+        if (loginUser.email == ele.email) return ele;
+      });
+
+      for (let i = 0; i < elements.length; i++) {
+        let x = elements[i].cartItems;
+        for (let j = 0; j < x.length; j++) {
+          sumCount += x[j].count;
+        }
+      }
+      total_cart_item.innerText = sumCount;
+    } else {
+      total_cart_item.innerText = sumCount;
+    }
+  }
 };
-displayCartCount(cart_items);
+displayCartCount();
 
 // redirect to account/login
-let loginUser = JSON.parse(localStorage.getItem("loginUser")) || null;
 let login_icon = document.getElementById("login-icon");
 login_icon.addEventListener("click", () => {
   if (loginUser) {
@@ -34,28 +49,6 @@ login_icon.addEventListener("click", () => {
     window.location.href = "login.html";
   }
 });
-
-let data = [
-  {
-    img: "https://cdn.shopify.com/s/files/1/0627/7388/7215/products/040500130-2__40145_300x.jpg?v=1645114548",
-    head: "A Toast To You RIng | Rose Gold (14K)",
-    price: 20.0,
-    count: 1,
-  },
-  {
-    img: "https://cdn.shopify.com/s/files/1/0627/7388/7215/products/L101016-1_300x.jpg?v=1650308676",
-    head: "Refined Stud Earrings",
-    price: 51.0,
-    count: 2,
-  },
-  {
-    img: "https://cdn.shopify.com/s/files/1/0627/7388/7215/products/010200756-2__84729_300x.jpg?v=1645115971",
-    head: "A Dozen Diamonds Dangle Earrings (14K)",
-    price: 18.0,
-    count: 5,
-  },
-];
-localStorage.setItem("cart_items", JSON.stringify(data));
 
 // append total cart price Display
 let displayTotalPrice = () => {
@@ -187,7 +180,7 @@ let appendFunction = (data) => {
     products_list.append(row);
   });
 };
-appendFunction(cart_items);
+// appendFunction(cart_items);
 
 // redirect to checkout page
 document.getElementById("checkout").addEventListener("click", () => {

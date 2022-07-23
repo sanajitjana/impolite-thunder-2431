@@ -13,19 +13,34 @@ logo.addEventListener("click", () => {
 
 //cart item count
 let cart_items = JSON.parse(localStorage.getItem("cart_items")) || [];
+let loginUser = JSON.parse(localStorage.getItem("loginUser")) || null;
 let sumCount = 0;
-let displayCartCount = (data) => {
-  if (!data) return;
+
+let displayCartCount = () => {
   let total_cart_item = document.getElementById("total-cart-item");
-  data.forEach((element) => {
-    sumCount += element.count;
-  });
-  total_cart_item.innerText = sumCount;
+  if (loginUser == null) {
+    total_cart_item.innerText = sumCount;
+  } else {
+    if (cart_items.length > 0) {
+      let elements = cart_items.filter((ele) => {
+        if (loginUser.email == ele.email) return ele;
+      });
+
+      for (let i = 0; i < elements.length; i++) {
+        let x = elements[i].cartItems;
+        for (let j = 0; j < x.length; j++) {
+          sumCount += x[j].count;
+        }
+      }
+      total_cart_item.innerText = sumCount;
+    } else {
+      total_cart_item.innerText = sumCount;
+    }
+  }
 };
-displayCartCount(cart_items);
+displayCartCount();
 
 // redirect to account/login
-let loginUser = JSON.parse(localStorage.getItem("loginUser")) || null;
 let login_icon = document.getElementById("login-icon");
 login_icon.addEventListener("click", () => {
   if (loginUser) {
@@ -101,22 +116,75 @@ let findProductId = (id) => {
 //add to cart function
 let addToCart = () => {
   if (!product_details) return;
-
-  // checking if product is alreday available
-  // then we can just increse the quantity
-  // either add to blank cart
-
-  let element = findProductId(product_details.id);
-  if (element) {
-    element["count"] = +document.getElementById("count-num").innerText;
-    cart_item.push(element);
-    localStorage.setItem("cart_item", JSON.stringify(cart_item));
-    window.location.href = "cart.html";
+  if (loginUser == null) {
+    alert("Login required");
   } else {
-    product_details["count"] = +document.getElementById("count-num").innerText;
-    cart_item.push(product_details);
-    localStorage.setItem("cart_item", JSON.stringify(product_details));
-    window.location.href = "cart.html";
+    //check user is exits retun his data - arr[obj]
+    let userIndex = null;
+    let res = cart_items.filter((item, index) => {
+      if (item.email == loginUser.email) {
+        userIndex = index;
+        return item;
+      }
+    });
+
+    // if user cart is exists check his array
+    if (res.length !== 0) {
+      let cartArray = res[0].cartItems;
+
+      // checking this product is present or not
+      let element = cartArray.filter((ele, index) => {
+        if (ele.id == product_details.id) {
+          return ele;
+        }
+      });
+
+      // if id match catch the cart-item for increasing count
+      if (element.length !== 0) {
+        element[0].count += +document.getElementById("count-num").innerText;
+        cart_items.splice(userIndex, 1);
+        let obj = {
+          email: loginUser.email,
+          cartItems: cartArray,
+        };
+        cart_items.push(obj);
+        localStorage.setItem("cart_items", JSON.stringify(cart_items));
+        displayCartCount();
+        alert("product added to the cart");
+      } else {
+        // else puting the item with count = button counter
+        product_details.count = +document.getElementById("count-num").innerText;
+        cartArray.push(product_details);
+
+        let obj = {
+          email: loginUser.email,
+          cartItems: cartArray,
+        };
+
+        let newArray = [];
+        newArray.push(obj);
+
+        localStorage.setItem("cart_items", JSON.stringify(newArray));
+        displayCartCount();
+        alert("product added to the cart");
+      }
+
+      // if user new/first time in cart/aftre a order wants to order more
+    } else if (res.length == 0) {
+      let count_input = +document.getElementById("count-num").innerText;
+      product_details.count = count_input;
+      let newArray = [];
+      newArray.push(product_details);
+
+      let obj = {
+        email: loginUser.email,
+        cartItems: newArray,
+      };
+      cart_items.push(obj);
+      localStorage.setItem("cart_items", JSON.stringify(cart_items));
+      displayCartCount();
+      alert("product added to the cart");
+    }
   }
 };
 

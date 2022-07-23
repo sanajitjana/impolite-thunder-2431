@@ -1,0 +1,169 @@
+h1 {
+  font-size: 40px;
+  line-height: 52px;
+  font-weight: 400;
+  color: #121212;
+  text-align: center;
+  margin-top: 50px;
+}
+#main {
+  width: 440px;
+  margin: auto;
+}
+#facebook {
+  border: 2px solid #3a86ff;
+  width: 100%;
+  height: 40px;
+  display: flex;
+  margin-top: 40px;
+  font-size: 20px;
+  justify-content: space-evenly;
+  align-items: center;
+}
+#facebook > div:nth-child(1) {
+  width: 40px;
+}
+#facebook > div:nth-child(2) > p {
+  color: #1877f8;
+  font-size: 14px;
+}
+#facebook > div:nth-child(2) {
+  width: 50%;
+}
+#facebook > div > img {
+  width: 65%;
+  margin-top: 2px;
+}
+#google {
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  height: 40px;
+  display: flex;
+  margin-top: 10px;
+  font-size: 20px;
+  justify-content: space-evenly;
+  align-items: center;
+}
+#google > div:nth-child(1) {
+  width: 20%;
+  height: 100%;
+}
+#google > div:nth-child(2) > p {
+  font-size: 16px;
+  margin-top: 10px;
+}
+#google > div:nth-child(2) {
+  width: 50%;
+}
+#google > div > img {
+  width: 40%;
+  margin-left: 15px;
+  margin-top: 2px;
+}
+#amazon {
+  height: 40px;
+  display: flex;
+  margin-top: 10px;
+  font-size: 20px;
+  justify-content: space-evenly;
+  align-items: center;
+  background-color: #ff9900;
+}
+#facebook:hover,
+#google:hover,
+#amazon:hover {
+  cursor: pointer;
+}
+#amazon > div:nth-child(1) {
+  width: 20%;
+  height: 100%;
+}
+#amazon > div:nth-child(2) > p {
+  font-size: 16px;
+  color: white;
+  margin-top: 10px;
+}
+#amazon > div:nth-child(2) {
+  width: 50%;
+}
+#amazon > div > img {
+  width: 40%;
+  margin-left: 15px;
+  margin-top: 2px;
+}
+form {
+  width: 440px;
+  margin: auto;
+  margin-top: 40px;
+  margin-bottom: 50px;
+}
+input[type="Email"] {
+  margin-bottom: 20px;
+}
+input {
+  width: 409px;
+  height: 45px;
+  font-size: 15px;
+  padding: 0px 15px;
+  border: 1px solid #7d7d7d;
+}
+input[type="password"]:hover,
+input[type="email"]:hover {
+  outline: 1px solid #7d7d7d;
+}
+input[type="submit"] {
+  width: 30%;
+  height: 50px;
+  background-color: #121212;
+  color: white;
+  display: block;
+  margin: auto;
+  margin-top: 45px;
+  border: none;
+}
+input[type="submit"]:hover {
+  outline: 1px solid #121212;
+  cursor: pointer;
+}
+#forgot-pass {
+  width: 145px;
+  font-size: 14px;
+  border: none;
+  display: block;
+  border-bottom: 1px solid #121212;
+}
+#create-account {
+  display: block;
+  margin: auto;
+  margin-top: 20px;
+  width: 95px;
+  font-size: 14px;
+  border: none;
+  display: block;
+  border-bottom: 1px solid #121212;
+}
+#forgot-pass:hover,
+#create-account:hover {
+  cursor: pointer;
+}
+@media all and (min-width: 376px) and (max-width: 426px) {
+  #main {
+    width: 300px;
+  }
+  form {
+    width: 300px;
+  }
+  input {
+    width: 270px;
+  }
+}
+@media all and (max-width: 376px) {
+  #main {
+    width: 300px;
+  }
+  form {
+    width: 300px;
+  }
+  input {
+    width: 270px;
+  }
+}

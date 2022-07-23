@@ -11,6 +11,12 @@ logo.addEventListener("click", () => {
   window.location.href = "index.html";
 });
 
+// signup page redirect
+let create_account = document.getElementById("create-account");
+create_account.addEventListener("click", () => {
+  window.location.href = "signup.html";
+});
+
 //cart item count
 let cart_items = JSON.parse(localStorage.getItem("cart_items")) || [];
 let displayCartCount = (data) => {
@@ -19,28 +25,30 @@ let displayCartCount = (data) => {
 };
 displayCartCount(cart_items);
 
-//--------------------------login js starts-------------------------------------------//
-
-document.querySelector("form").addEventListener("submit", myloginfun);
-let data = JSON.parse(localStorage.getItem("Userdetails")) || [];
-
-function myloginfun(event) {
+// login function
+let loginFunction = (data, event) => {
   event.preventDefault();
+
   let email = document.querySelector("#email").value;
   let password = document.querySelector("#password").value;
+
   let res = false;
   data.map((elem) => {
     if (elem.email == email && elem.password == password) {
       res = true;
-
-      localStorage.setItem("UserDetails", JSON.stringify(data));
+      localStorage.setItem("loginUser", JSON.stringify(signupData));
     }
   });
   if (res == true) {
-    alert("You are successfully logged in");
-    location.href = "Home.html";
+    alert("Login successful!");
+    window.location.href = "index.html";
   } else {
-    alert("Credenials are wrong!!!!!");
-    location.href = "login.html";
+    alert("Wrong credentials!");
   }
-}
+};
+
+// function invoke
+let signupData = JSON.parse(localStorage.getItem("Userdetails")) || [];
+document.querySelector("form").addEventListener("submit", (e) => {
+  loginFunction(signupData, e);
+});

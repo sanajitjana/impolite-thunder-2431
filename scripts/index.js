@@ -1,4 +1,4 @@
-import { navbar, footer } from "./navbar.js";
+import { navbar, footer } from "../components/navbar.js";
 let navbarContainer = document.getElementById("navbar");
 let footerContainer = document.getElementById("footer");
 

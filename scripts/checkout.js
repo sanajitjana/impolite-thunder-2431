@@ -202,7 +202,9 @@ let checkoutFunction = (event) => {
         };
         let loginUserLS = JSON.parse(localStorage.getItem("loginUser"));
 
+        let randNum = Math.floor(Math.random() * 100000 + 1);
         let newOrders = {
+          order_id: randNum,
           email: loginUserLS.email,
           first_name: loginUserLS.first_name,
           last_name: loginUserLS.last_name,

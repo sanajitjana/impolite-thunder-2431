@@ -1,0 +1,51 @@
+#braceletdiv{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    /* gap: 10px; */
+    width: 75%;
+    margin: auto;
+    
+}
+#earringtop{
+    width: 80%;
+    margin: auto;
+  }
+#braceletdiv img{
+    width: 90%;
+    /* border: 1px solid; */
+}
+
+#card{
+    margin-bottom: 5%;
+}
+#card  h5,#card p{
+    margin-bottom:5% ;
+    color: rgb(86, 79, 79);
+}
+#card  p:hover{
+    text-decoration: underline;
+}
+.filterdiv{
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: space-around;
+    /* border: 1px solid; */
+    width :11%
+}
+#earingoption{
+    display: flex;
+    align-items: center;
+    justify-content:space-between ;
+    /* border: 1px solid; */
+    /* height: 10px; */;
+    width: 75%;
+    margin: auto;
+}
+.sortdiv{
+    display: flex;
+}
+ul{ list-style-type: none; }
+ul li{
+    list-style-type: none;
+}

@@ -188,7 +188,7 @@ let checkoutFunction = (event) => {
     while (true) {
       let msg = prompt("We have sent a OTP, Enter this here (e.g:1234)");
       if (msg == 1234) {
-        let newOrders = {
+        let shippingAddress = {
           email_mobile: email_mobile,
           country: country,
           firstname: firstname,
@@ -199,6 +199,14 @@ let checkoutFunction = (event) => {
           city: city,
           state: state,
           zipcode: zipcode,
+        };
+        let loginUserLS = JSON.parse(localStorage.getItem("loginUser"));
+
+        let newOrders = {
+          email: loginUserLS.email,
+          first_name: loginUserLS.first_name,
+          last_name: loginUserLS.last_name,
+          shippingAddress: shippingAddress,
           orderItems: cart_items,
         };
         orders.push(newOrders);

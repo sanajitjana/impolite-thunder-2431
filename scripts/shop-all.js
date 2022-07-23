@@ -98,13 +98,23 @@ displayProductList(data);
 let sorting = () => {
   let x = document.querySelector("#selector").value;
   if (x === "Bestselling") {
+    let res = [];
     for (let i = 0; i < data.length; i++) {
-      let compare = data[i].tag;
-      if (compare === "Bestselling") {
-        return data[i];
+      if (x === data[i].tag) {
+        res.push(data[i]);
       }
     }
-    displayProductList(data);
+    displayProductList(res);
+
+    // Featured Filter
+  } else if (x === "Featured") {
+    let res = [];
+    for (let i = 0; i < data.length; i++) {
+      if (x === data[i].tag) {
+        res.push(data[i]);
+      }
+    }
+    displayProductList(res);
 
     // A to Z Filter
   } else if (x === "A-Z") {
@@ -164,3 +174,15 @@ let sorting = () => {
 
 // filter function invoke
 document.querySelector("#selector").addEventListener("change", sorting);
+
+// display total products count
+let productsCountDisplay = (data) => {
+  let left_s = document.getElementById("left-s");
+  left_s.innerHTML = "";
+
+  let p = document.createElement("p");
+  p.innerText = `${data.length} products`;
+
+  left_s.append(p);
+};
+productsCountDisplay(data);

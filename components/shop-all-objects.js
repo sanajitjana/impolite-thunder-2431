@@ -20,10 +20,9 @@ let shopall = [
     price: 16.0,
     category: "necklaces",
     date: 2022,
-    tag: "featured",
+    tag: "Featured",
     availability: false,
   },
-
   {
     image:
       "https://cdn.shopify.com/s/files/1/0627/7388/7215/products/L101009-B-2_823x.jpg?v=1650308459",
@@ -62,7 +61,6 @@ let shopall = [
     tag: "bestselling",
     availability: true,
   },
-
   {
     image:
       "https://cdn.shopify.com/s/files/1/0627/7388/7215/products/L101009-C-1_823x.jpg?v=1650308512",
@@ -76,7 +74,6 @@ let shopall = [
     availability: true,
     id: 5,
   },
-
   {
     image:
       "https://cdn.shopify.com/s/files/1/0627/7388/7215/products/030100157-2__79685_493x.jpg?v=1645115596",
@@ -135,7 +132,7 @@ let shopall = [
     price: 24.0,
     category: "bracelets",
     date: 2021,
-    tag: "featured",
+    tag: "Featured",
     availability: false,
   },
   {
@@ -171,10 +168,9 @@ let shopall = [
     price: 16.0,
     category: "earrings",
     date: 2022,
-    tag: "featured",
+    tag: "Featured",
     availability: false,
   },
-
   {
     image:
       "https://cdn.shopify.com/s/files/1/0627/7388/7215/products/L401019-7-2_823x.jpg?v=1645728794",
@@ -188,7 +184,6 @@ let shopall = [
     availability: true,
     id: 31,
   },
-
   {
     image:
       "https://cdn.shopify.com/s/files/1/0627/7388/7215/products/L401010-7-2__72676_823x.jpg?v=1645116401",
@@ -204,8 +199,8 @@ let shopall = [
   },
 ];
 
-function shopAll() {
+let shopAll = () => {
   return shopall;
-}
+};
 
 export default shopAll;

@@ -16,7 +16,6 @@
     <!-- custom css -->
     <link rel="stylesheet" href="./styles/navbar.css" />
     <link rel="stylesheet" href="./styles/footer.css" />
-    <!-- <link rel="stylesheet" href="./styles/common.css" /> -->
     <link rel="stylesheet" href="./styles/product-list.css" />
 
     <!-- font-awesome -->
@@ -35,7 +34,7 @@
         <h1>All Products</h1>
       </div>
       <div id="head-filter">
-        <div id="first-side">
+        <div id="first-side" style="display: none">
           <p>Filter:</p>
           <div id="Price">
             <p id="price-filter">
@@ -81,18 +80,21 @@
           </div>
         </div>
         <!-- Choose Option -->
-        <div id="left-head">
-          <div><p>Sort By:</p></div>
-          <select id="selector">
-            <option value="Featured" selected>Featured</option>
-            <option value="Bestselling">Best Selling</option>
-            <option value="A-Z">Alphabetically,A-Z</option>
-            <option value="Z-A">Alphabetically,Z-A</option>
-            <option value="low-to-high">Price,low to high</option>
-            <option value="high-to-low">Price,high to low</option>
-            <option value="old-new">Date,old to new</option>
-            <option value="new-old">Date,new to old</option>
-          </select>
+        <div id="left-head" style="width: 100%">
+          <div id="left-f">
+            <div><p>Sort by:</p></div>
+            <select id="selector">
+              <option value="Featured" selected>Featured</option>
+              <option value="Bestselling">Best Selling</option>
+              <option value="A-Z">Alphabetically, A-Z</option>
+              <option value="Z-A">Alphabetically, Z-A</option>
+              <option value="low-to-high">Price, low to high</option>
+              <option value="high-to-low">Price, high to low</option>
+              <option value="old-new">Date, old to new</option>
+              <option value="new-old">Date, new to old</option>
+            </select>
+          </div>
+          <div id="left-s"></div>
         </div>
       </div>
       <div id="product-list">

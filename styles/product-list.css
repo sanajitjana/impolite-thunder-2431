@@ -7,6 +7,7 @@ body {
   padding: 0;
 }
 #first-side {
+  width: 50%;
   display: flex;
   gap: 30px;
   align-items: center;
@@ -32,14 +33,17 @@ body {
   padding-right: 20px;
 }
 #left-head {
-  width: 65%;
+  width: 50%;
   display: flex;
-  justify-content: end;
-  padding-left: 20px;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 20px;
 }
-#left-head > div {
-  width: 60px;
+#left-f {
+  display: flex;
+  gap: 20px;
 }
+
 #shopall-head {
   width: 100%;
   padding: 0px 150px;
@@ -165,7 +169,7 @@ input[type="checkbox"] {
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: auto;
   gap: 10px;
-  margin-top: 40px;
+  margin-top: 15px;
 }
 .card:hover {
   cursor: pointer;
@@ -227,6 +231,9 @@ input[type="checkbox"] {
   font-weight: 400;
   line-height: 17px;
   color: #121212;
+}
+#selector {
+  border: none;
 }
 @media all and (min-width: 769px) and (max-width: 1024px) {
   #head-filter {

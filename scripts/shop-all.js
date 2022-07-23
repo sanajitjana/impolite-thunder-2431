@@ -47,7 +47,7 @@ let displayProductList = (data) => {
     card.setAttribute("class", "card");
 
     card.addEventListener("click", () => {
-      localStorage.setItem("productDetails", JSON.stringify(element));
+      localStorage.setItem("productDetails", JSON.stringify(el));
       window.location.href = "product-details.html";
     });
 

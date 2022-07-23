@@ -1,9 +1,14 @@
-#main {
-  width: 30%;
-  margin: auto;
-}
 h1 {
+  font-size: 40px;
+  line-height: 52px;
+  font-weight: 400;
+  color: #121212;
   text-align: center;
+  margin-top: 50px;
+}
+#main {
+  width: 40%;
+  margin: auto;
 }
 #fb {
   border: 2px solid #3a86ff;
@@ -16,11 +21,11 @@ h1 {
   align-items: center;
 }
 #fb > div:nth-child(1) {
-  width: 20%;
-  height: 100%;
+  width: 40px;
 }
 #fb > div:nth-child(2) > p {
-  color: #3a86ff;
+  color: #1877f8;
+  font-size: 14px;
 }
 #fb > div:nth-child(2) {
   width: 50%;

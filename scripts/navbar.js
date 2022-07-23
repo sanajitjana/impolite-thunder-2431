@@ -38,7 +38,8 @@ let navbar = () => {
       <p id="total-cart-item"></p>
     </a>
   </div>
-</div>`;
+</div>
+<hr class="hr-bar" />`;
 };
 
 let footer = () => {

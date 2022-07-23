@@ -24,6 +24,7 @@ body {
 .hr-bar {
   border: none;
   border-top: 1px solid #ececec;
+  margin: 0px;
 }
 #header {
   width: 75%;

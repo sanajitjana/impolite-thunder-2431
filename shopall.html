@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Bracelet-Lovoda</title>
+    <title>Shopall-Lovoda</title>
     <link rel="stylesheet" href="common.css" />
     <link
       rel="stylesheet"
@@ -15,7 +15,7 @@
   <body>
     <div id="container">
       <div id="heading">
-        <h1>Bracelets</h1>
+        <h1>All Products</h1>
       </div>
       <div id="head-filter">
         <div>
@@ -91,10 +91,10 @@
 </html>
 
 <script type="module">
-  import object from "./Object.js";
+  import shopAll from "./shopall.js";
   import popup from "./popup.js";
   let data;
-  data = object();
+  data = shopAll();
   appendData(data);
 
   document.querySelector("#selector").addEventListener("change", sorting);
@@ -157,35 +157,33 @@
   function appendData(data) {
     document.getElementById("products").innerHTML = "";
     data.forEach((el) => {
-      if (el.category === "bracelets") {
-        let div = document.createElement("div");
-        div.setAttribute("id", "card");
-        div.addEventListener("click", () => {
-          goingToCart(el);
-        });
-        div.addEventListener("mouseover", () => {
-          images.src = el.hovimage;
-          heading.style.textDecoration = "underline 1.6px";
-        });
-        div.addEventListener("mouseout", () => {
-          images.src = el.image;
-          heading.style.textDecoration = "none";
-        });
-
-        let images = document.createElement("img");
+      let div = document.createElement("div");
+      div.setAttribute("id", "card");
+      div.addEventListener("click", () => {
+        goingToCart(el);
+      });
+      div.addEventListener("mouseover", () => {
+        images.src = el.hovimage;
+        heading.style.textDecoration = "underline 1.6px";
+      });
+      div.addEventListener("mouseout", () => {
         images.src = el.image;
+        heading.style.textDecoration = "none";
+      });
 
-        let heading = document.createElement("h3");
-        heading.setAttribute("class", "heading");
-        heading.innerText = el.head;
+      let images = document.createElement("img");
+      images.src = el.image;
 
-        let prices = document.createElement("p");
-        prices.setAttribute("id", "price");
-        prices.innerText = "$" + el.price;
+      let heading = document.createElement("h3");
+      heading.setAttribute("class", "heading");
+      heading.innerText = el.head;
 
-        div.append(images, heading, prices);
-        document.getElementById("products").append(div);
-      }
+      let prices = document.createElement("p");
+      prices.setAttribute("id", "price");
+      prices.innerText = "$" + el.price;
+
+      div.append(images, heading, prices);
+      document.getElementById("products").append(div);
     });
   }
 

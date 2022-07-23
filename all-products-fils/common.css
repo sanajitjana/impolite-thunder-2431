@@ -1,0 +1,176 @@
+@import url("https://fonts.googleapis.com/css2?family=Asap:ital@1&family=Istok+Web&family=Kings&family=Montserrat:ital,wght@1,300&family=Open+Sans:wght@300&family=Oswald:wght@500&family=Pacifico&family=Roboto:wght@400;500&family=Ubuntu:wght@300&family=Vollkorn&display=swap");
+
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+#container {
+  width: 80%;
+  height: auto;
+  margin: auto;
+  /* border: 1px solid black; */
+}
+#head-filter {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  padding: 0 4rem;
+  font-family: Assistant, sans-serif;
+  font-size: 15px;
+  font-weight: 400;
+  opacity: 0.8;
+}
+#head-filter > div > p {
+  padding-right: 30px;
+}
+
+#head-filter > p {
+  padding-right: 20px;
+}
+#left-head {
+  width: 65%;
+  display: flex;
+  justify-content: end;
+  padding-left: 20px;
+}
+#left-head > div {
+  width: 60px;
+}
+#products {
+  margin-top: 36px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(auto, 400px);
+  gap: 8px;
+  padding: 0 4rem;
+}
+#products > #card > img {
+  width: 100%;
+}
+#shopall-head {
+  width: 100%;
+  padding: 0px 150px;
+  display: flex;
+  justify-content: end;
+}
+#sort-product {
+  margin-left: 15px;
+}
+#price-range {
+  margin-top: 20px;
+  width: 22%;
+  display: none;
+  height: 150px;
+  background-color: white;
+  position: absolute;
+  left: 250px;
+  z-index: 1;
+  padding: 15px;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+#price-head {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 20px;
+  font-family: Assistant, sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+}
+#price-input {
+  margin-top: 40px;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  font-family: Assistant, sans-serif;
+  font-size: 16px;
+}
+.price-input-box {
+  width: 100px;
+  height: 40px;
+}
+input[type="checkbox"] {
+  width: 50px;
+  height: 20px;
+  margin-top: 20px;
+}
+#stock-select {
+  margin-top: 20px;
+  width: 22%;
+  display: none;
+  height: 150px;
+  background-color: white;
+  position: absolute;
+  z-index: 1;
+  /* padding: 20px; */
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+#select {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 20px;
+  font-family: Assistant, sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+}
+#stock {
+  width: 80%;
+  font-family: Assistant, sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  padding: 15px;
+}
+#pages {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  font-size: 18px;
+  margin-top: 50px;
+  margin-bottom: 40px;
+  cursor: pointer;
+}
+.page {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  color: black;
+  cursor: pointer;
+}
+.page:hover {
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+}
+.material-symbols-outlined {
+  font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 48;
+}
+#heading {
+  width: 100%;
+  height: 90px;
+  display: flex;
+  align-items: center;
+}
+#heading > h1 {
+  font-size: 40px;
+  font-family: "Nanum Gothic", sans-serif;
+  font-style: normal;
+  font-weight: 100;
+  margin-left: 63px;
+}
+
+#card h3 {
+  font-family: Assistant, sans-serif;
+  font-size: 13px;
+  font-weight: 400;
+  margin-top: 10px;
+}
+#card p {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-family: Assistant, sans-serif;
+  font-size: 13px;
+  font-weight: 400;
+}

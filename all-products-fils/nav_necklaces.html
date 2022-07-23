@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Necklaces-Lovoda</title>
+    <link rel="stylesheet" href="common.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css"
+    />
+    <style></style>
+  </head>
+  <body>
+    <div id="container">
+      <div id="heading">
+        <h1>Necklaces</h1>
+      </div>
+      <div id="head-filter">
+        <div>
+          <p>Filter:</p>
+        </div>
+        <div id="Price">
+          <p id="price-filter">
+            Price <i class="fa fa-angle-down" aria-hidden="true"></i>
+          </p>
+          <!-- Filter Popup -->
+          <div id="price-range">
+            <div id="price-head">
+              <p>The highest price is $95.00</p>
+              <p>reset</p>
+            </div>
+            <div id="price-input">
+              <p>
+                $
+                <input type="text" placeholder="From" class="price-input-box" />
+              </p>
+              <p>
+                $ <input type="text" placeholder="To" class="price-input-box" />
+              </p>
+            </div>
+          </div>
+          <!-- Filter Popup Ended-->
+        </div>
+        <div id="availibility">
+          <p>
+            Availability <i class="fa fa-angle-down" aria-hidden="true"></i>
+          </p>
+          <div id="stock-select">
+            <div id="select">
+              <p>0 Selected</p>
+              <p>reset</p>
+            </div>
+            <div id="stock">
+              <p><input type="checkbox" />In Stock</p>
+              <p><input type="checkbox" />Out of Stock</p>
+            </div>
+          </div>
+        </div>
+        <!--  -->
+        <!-- Choose Option -->
+        <div id="left-head">
+          <div><p>Sort By:</p></div>
+          <select id="selector">
+            <option value="Featured" selected>Featured</option>
+            <option value="Bestselling">Best Selling</option>
+            <option value="A-Z">Alphabetically,A-Z</option>
+            <option value="Z-A">Alphabetically,Z-A</option>
+            <option value="low-to-high">Price,low to high</option>
+            <option value="high-to-low">Price,high to low</option>
+            <option value="old-new">Date,old to new</option>
+            <option value="new-old">Date,new to old</option>
+          </select>
+        </div>
+      </div>
+      <div id="products">
+        <!-- Append the all Products Here -->
+      </div>
+
+      <div id="pages">
+        <a href="" class="page">1</a>
+        <a href="" class="page">2</a>
+        <a href="" class="page">3</a>
+        <a href="" class="page">...</a>
+        <a href="" class="page">23</a>
+        <span class="material-symbols-outlined"> </span>
+      </div>
+    </div>
+  </body>
+</html>
+
+<script type="module">
+  import object from "./Object.js";
+  import popup from "./popup.js";
+  let data;
+  data = object();
+  appendData(data);
+
+  document.querySelector("#selector").addEventListener("change", sorting);
+
+  function sorting() {
+    let x = document.querySelector("#selector").value;
+    if (x === "Bestselling") {
+      for (let i = 0; i < data.length; i++) {
+        let compare = data[i].tag;
+        if (compare === "Bestselling") {
+          // return compare;
+          return data[i];
+        }
+      }
+      appendData(data);
+    } else if (x === "A-Z") {
+      data.sort(function (a, b) {
+        if (a.head > b.head) {
+          return 1;
+        }
+        if (b.head > a.head) {
+          return -1;
+        }
+        return 0;
+      });
+      appendData(data);
+    } else if (x === "Z-A") {
+      data.sort(function (a, b) {
+        if (a.head < b.head) {
+          return 1;
+        }
+        if (b.head < a.head) {
+          return -1;
+        }
+        return 0;
+      });
+      appendData(data);
+    } else if (x === "low-to-high") {
+      data.sort(function (a, b) {
+        return a.price - b.price;
+      });
+      appendData(data);
+    } else if (x === "high-to-low") {
+      data.sort(function (a, b) {
+        return b.price - a.price;
+      });
+      appendData(data);
+    } else if (x === "old-new") {
+      data.sort(function (a, b) {
+        return a.date - b.date;
+      });
+      appendData(data);
+    } else if (x === "new-old") {
+      data.sort(function (a, b) {
+        return b.date - a.date;
+      });
+      appendData(data);
+    }
+  }
+  function appendData(data) {
+    document.getElementById("products").innerHTML = "";
+    data.forEach((el) => {
+      if (el.category === "necklaces") {
+        let div = document.createElement("div");
+        div.setAttribute("id", "card");
+        div.addEventListener("click", () => {
+          goingToCart(el);
+        });
+        div.addEventListener("mouseover", () => {
+          images.src = el.hovimage;
+          heading.style.textDecoration = "underline 1.6px";
+        });
+        div.addEventListener("mouseout", () => {
+          images.src = el.image;
+          heading.style.textDecoration = "none";
+        });
+
+        let images = document.createElement("img");
+        images.src = el.image;
+
+        let heading = document.createElement("h3");
+        heading.setAttribute("class", "heading");
+        heading.innerText = el.head;
+
+        let prices = document.createElement("p");
+        prices.setAttribute("id", "price");
+        prices.innerText = "$" + el.price;
+
+        div.append(images, heading, prices);
+        document.getElementById("products").append(div);
+      }
+    });
+  }
+
+  let goingToCart = (cartData) => {
+    localStorage.setItem("CartItems", JSON.stringify(cartData));
+    window.location.href = "";
+  };
+</script>

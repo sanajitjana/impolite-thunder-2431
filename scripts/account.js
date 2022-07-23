@@ -72,13 +72,15 @@ let displayOrders = (order, loginUser) => {
 
   orderArray.forEach((element) => {
     let orderNumber = document.createElement("p");
-    orderNumber.innerText = "randomNum";
+    orderNumber.innerHTML = `Order ID: <strong>#${element.order_id}</strong>`;
     orderNumber.setAttribute("id", "order-number");
 
     let products_list = document.createElement("div");
     products_list.setAttribute("id", "products-list");
 
     let items = element.orderItems;
+    let totalOrderAmount = 0;
+
     items.forEach((item) => {
       let row = document.createElement("div");
       row.setAttribute("id", "row");
@@ -118,22 +120,29 @@ let displayOrders = (order, loginUser) => {
       let row_price_display = document.createElement("div");
       row_price_display.setAttribute("id", "row-price-display");
 
-      let totalPrice = "Total Row Price";
+      let totalRowPrice = item.count * item.price;
+      totalOrderAmount += totalRowPrice;
+      let totalPrice = `$${totalRowPrice.toFixed(2)}`;
       row_price_display.append(totalPrice);
 
       row.append(img_box, btn_action, row_price_display);
       products_list.append(row);
-      console.log(item);
     });
     let hr_bar = document.createElement("hr");
     hr_bar.setAttribute("class", "hr-bar");
 
-    below_table.append(orderNumber, products_list, hr_bar);
-  });
+    let sub_total_price = document.createElement("div");
+    sub_total_price.setAttribute("id", "sub-total-price");
 
-  // console.log(orderArray);
-  // console.log(order);
-  // console.log(loginUser.email);
+    let totalText = document.createElement("p");
+    totalText.innerText = "Total";
+
+    let subTotalPrice = document.createElement("p");
+    subTotalPrice.innerText = `$${totalOrderAmount.toFixed(2)}`;
+
+    sub_total_price.append(totalText, subTotalPrice);
+    below_table.append(orderNumber, products_list, hr_bar, sub_total_price);
+  });
 };
 
 let ordersLS = JSON.parse(localStorage.getItem("orders")) || null;

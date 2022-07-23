@@ -9,7 +9,6 @@ body {
   margin-top: 50px;
   display: flex;
   justify-content: space-between;
-  align-items: center;
 }
 #top-sec h1 {
   font-weight: 400;
@@ -37,10 +36,14 @@ body {
   margin-bottom: 50px;
 }
 #side-title {
+  width: 75%;
+  text-align: right;
+  margin: auto;
   font-size: 24px;
   line-height: 31px;
   color: #121212;
   font-weight: 400;
+  margin-bottom: 50px;
 }
 .hr-bar {
   border: none;
@@ -99,9 +102,14 @@ body {
 }
 #sub-total-price {
   display: flex;
-  gap: 20px;
+  gap: 10px;
   margin-top: -40px;
   justify-content: right;
+  align-items: center;
+}
+#sub-total-price p:last-child {
+  font-size: 18px;
+  font-weight: 600;
 }
 @media all and (min-width: 769px) and (max-width: 1024px) {
   #top-sec {
@@ -110,12 +118,18 @@ body {
   #below-table {
     width: 90%;
   }
+  #side-title {
+    width: 90%;
+  }
 }
 @media all and (min-width: 427px) and (max-width: 768px) {
   #top-sec {
     width: 90%;
   }
   #below-table {
+    width: 90%;
+  }
+  #side-title {
     width: 90%;
   }
   #table-heading {
@@ -128,8 +142,15 @@ body {
 @media all and (max-width: 426px) {
   #top-sec {
     width: 90%;
+    flex-direction: column;
+  }
+  #logout {
+    margin-top: -20px;
   }
   #below-table {
+    width: 90%;
+  }
+  #side-title {
     width: 90%;
   }
   #table-heading p:nth-child(2) {

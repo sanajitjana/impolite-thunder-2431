@@ -1,3 +1,24 @@
+import { navbar, footer } from "../components/navbar.js";
+let navbarContainer = document.getElementById("navbar");
+let footerContainer = document.getElementById("footer");
+
+navbarContainer.innerHTML = navbar();
+footerContainer.innerHTML = footer();
+
+// home redirect
+let logo = document.getElementById("logo");
+logo.addEventListener("click", () => {
+  window.location.href = "index.html";
+});
+
+//cart item count
+let cart_items = JSON.parse(localStorage.getItem("cart_items")) || [];
+let displayCartCount = (data) => {
+  let total_cart_item = document.getElementById("total-cart-item");
+  total_cart_item.innerText = data.length;
+};
+displayCartCount(cart_items);
+
 // quantity counter function
 let dec = document.getElementById("dec");
 let inc = document.getElementById("inc");

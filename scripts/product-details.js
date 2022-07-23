@@ -79,7 +79,7 @@ let appendProductDetails = (data) => {
 
 // append function invoke
 let product_details =
-  JSON.parse(localStorage.getItem("product_details")) || null;
+  JSON.parse(localStorage.getItem("productDetails")) || null;
 appendProductDetails(product_details);
 
 //find product available or not

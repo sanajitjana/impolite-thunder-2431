@@ -67,14 +67,20 @@ inc.addEventListener("click", increaseFunc);
 let appendProductDetails = (data) => {
   if (!data) return;
 
-  let prod_main_img = document.getElementById("product_main_img");
-  prod_main_img.src = data.img1;
+  let prod_main_img = document.getElementById("main-img");
+  prod_main_img.src = data.image;
+
+  let prod_second_img = document.getElementById("second-img");
+  prod_second_img.src = data.hovimage;
+
+  let prod_third_img = document.getElementById("third-img");
+  prod_third_img.src = data.image;
 
   let prod_title = document.getElementById("product-title");
   prod_title.innerText = data.head;
 
   let prod_price = document.getElementById("price");
-  prod_price.innerText = `$${data.price}`;
+  prod_price.innerText = `$${data.price.toFixed(2)}`;
 };
 
 // append function invoke

@@ -312,6 +312,9 @@ body {
   margin-top: -8px;
   color: #c9ac92;
 }
+.rotateimg180 {
+  transform: rotateY(180deg);
+}
 @media all and (min-width: 769px) and (max-width: 1024px) {
   #top-section {
     width: 90%;

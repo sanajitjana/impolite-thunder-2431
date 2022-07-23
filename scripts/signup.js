@@ -13,11 +13,27 @@ logo.addEventListener("click", () => {
 
 //cart item count
 let cart_items = JSON.parse(localStorage.getItem("cart_items")) || [];
+let sumCount = 0;
 let displayCartCount = (data) => {
+  if (!data) return;
   let total_cart_item = document.getElementById("total-cart-item");
-  total_cart_item.innerText = data.length;
+  data.forEach((element) => {
+    sumCount += element.count;
+  });
+  total_cart_item.innerText = sumCount;
 };
 displayCartCount(cart_items);
+
+// redirect to account/login
+let loginUser = JSON.parse(localStorage.getItem("loginUser")) || null;
+let login_icon = document.getElementById("login-icon");
+login_icon.addEventListener("click", () => {
+  if (loginUser) {
+    window.location.href = "account.html";
+  } else {
+    window.location.href = "login.html";
+  }
+});
 
 // signup function
 let signupData = JSON.parse(localStorage.getItem("signupData")) || [];

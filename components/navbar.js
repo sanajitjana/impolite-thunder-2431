@@ -30,7 +30,7 @@ let navbar = () => {
     <a href="javascript:void(0)">
       <i class="fa fa-search" aria-hidden="true"></i>
     </a>
-    <a href="login.html" id="login-icon">
+    <a href="javascript:void(0)" id="login-icon">
       <i class="fa fa-user-o" aria-hidden="true"></i>
     </a>
     <a href="cart.html">      

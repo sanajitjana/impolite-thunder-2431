@@ -19,11 +19,27 @@ create_account.addEventListener("click", () => {
 
 //cart item count
 let cart_items = JSON.parse(localStorage.getItem("cart_items")) || [];
+let sumCount = 0;
 let displayCartCount = (data) => {
+  if (!data) return;
   let total_cart_item = document.getElementById("total-cart-item");
-  total_cart_item.innerText = data.length;
+  data.forEach((element) => {
+    sumCount += element.count;
+  });
+  total_cart_item.innerText = sumCount;
 };
 displayCartCount(cart_items);
+
+// redirect to account/login
+let loginUser = JSON.parse(localStorage.getItem("loginUser")) || null;
+let login_icon = document.getElementById("login-icon");
+login_icon.addEventListener("click", () => {
+  if (loginUser) {
+    window.location.href = "account.html";
+  } else {
+    window.location.href = "login.html";
+  }
+});
 
 // login function
 let loginFunction = (data, event) => {
@@ -32,23 +48,30 @@ let loginFunction = (data, event) => {
   let email = document.querySelector("#email").value;
   let password = document.querySelector("#password").value;
 
-  let res = false;
-  data.map((elem) => {
-    if (elem.email == email && elem.password == password) {
-      res = true;
-      localStorage.setItem("loginUser", JSON.stringify(signupData));
-    }
-  });
-  if (res == true) {
-    alert("Login successful!");
-    window.location.href = "index.html";
+  if (email == "") {
+    alert("Please enter a email");
+  } else if (password == "") {
+    alert("Please enter a password");
   } else {
-    alert("Wrong credentials!");
+    let res = data.filter((elem) => {
+      if (elem.email == email && elem.password == password) {
+        return elem;
+      }
+    });
+    if (res) {
+      alert("Login successful!");
+      let loginVal = res[0];
+      localStorage.setItem("loginUser", JSON.stringify(loginVal));
+      window.location.href = "index.html";
+    } else {
+      alert("Wrong credentials!");
+    }
   }
 };
 
 // function invoke
-let signupData = JSON.parse(localStorage.getItem("Userdetails")) || [];
+let signupData = JSON.parse(localStorage.getItem("signupData")) || [];
 document.querySelector("form").addEventListener("submit", (e) => {
   loginFunction(signupData, e);
+  console.log(signupData);
 });

@@ -17,10 +17,12 @@ let loginUser = JSON.parse(localStorage.getItem("loginUser")) || null;
 
 let displayCartCount = () => {
   let total_cart_item = document.getElementById("total-cart-item");
+  let wishlist_cart_item = document.getElementById("wishlist");
   let loginUser = JSON.parse(localStorage.getItem("loginUser")) || null;
   let sumCount = 0;
   if (loginUser == null) {
     total_cart_item.innerText = sumCount;
+    wishlist_cart_item.innerText = `View my Cart (${sumCount})`;
   } else {
     if (cart_items.length > 0) {
       let elements = cart_items.filter((ele) => {
@@ -34,8 +36,10 @@ let displayCartCount = () => {
         }
       }
       total_cart_item.innerText = sumCount;
+      wishlist_cart_item.innerText = `View my Cart (${sumCount})`;
     } else {
       total_cart_item.innerText = sumCount;
+      wishlist_cart_item.innerText = `View my Cart (${sumCount})`;
     }
   }
 };
@@ -201,4 +205,20 @@ add_to_cart_btn.addEventListener("click", (e) => {
 let redirect_to_cart = document.getElementById("wishlist");
 redirect_to_cart.addEventListener("click", (e) => {
   window.location.href = "cart.html";
+});
+
+// redirect to checkout page
+document.getElementById("buy-it-now").addEventListener("click", () => {
+  let elements = cart_items.filter((ele, index) => {
+    if (loginUser.email == ele.email) {
+      return ele;
+    }
+  });
+  let flag = false;
+  for (let i = 0; i < elements.length; i++) {
+    let x = elements[i].cartItems;
+    if (x.length > 0) flag = true;
+  }
+  if (flag) window.location.href = "checkout.html";
+  else alert("Please select a cart item");
 });

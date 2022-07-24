@@ -20,6 +20,10 @@ body {
   font-size: 15px;
   font-weight: 400;
   opacity: 0.8;
+  position: relative;
+}
+#head-filter > div {
+  position: relative;
 }
 #head-filter > div > p {
   padding-right: 30px;

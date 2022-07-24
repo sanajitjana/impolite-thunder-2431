@@ -77,13 +77,13 @@ displayLoginUserDetails(loginUserLS);
 let displayOrders = (order, loginUser) => {
   if (!order) return;
 
-  let orderArray = order.filter((element) => {
-    if (element.email == loginUser.email) return element;
-  });
-
   let below_table = document.getElementById("below-table");
   below_table.innerHTML = "";
   below_table.setAttribute("id", "below-table");
+
+  order.filter((ele) => {
+    if (loginUser.email == ele.email) return ele;
+  });
 
   orderArray.forEach((element) => {
     let orderNumber = document.createElement("p");

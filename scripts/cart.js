@@ -162,22 +162,17 @@ let appendFunction = (data) => {
     // remove from cart function
     trash.addEventListener("click", () => {
       array.splice(index, 1);
-
-      cart_items.splice(userIndex, 1);
       let obj = {
         email: loginUser.email,
         cartItems: array,
       };
-      cart_items.push(obj);
-      localStorage.setItem("cart_items", JSON.stringify(cart_items));
-      displayCartCount();
+      let newArray = [];
+      newArray.push(obj);
 
-      let c_data = localStorage.getItem(
-        "cart_items",
-        JSON.stringify(cart_items)
-      );
-      appendFunction(c_data);
+      localStorage.setItem("cart_items", JSON.stringify(newArray));
+      displayCartCount();
       displayTotalPrice();
+      window.location.reload();
     });
 
     counter.append(btn1, btn2, btn3);
@@ -250,5 +245,16 @@ appendFunction(cart_items);
 
 // redirect to checkout page
 document.getElementById("checkout").addEventListener("click", () => {
-  window.location.href = "checkout.html";
+  let elements = cart_items.filter((ele, index) => {
+    if (loginUser.email == ele.email) {
+      return ele;
+    }
+  });
+  let flag = false;
+  for (let i = 0; i < elements.length; i++) {
+    let x = elements[i].cartItems;
+    if (x.length > 0) flag = true;
+  }
+  if (flag) window.location.href = "checkout.html";
+  else alert("Please select a cart item");
 });

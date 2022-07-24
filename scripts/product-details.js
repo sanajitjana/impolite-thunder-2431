@@ -144,12 +144,12 @@ let addToCart = () => {
       if (element.length !== 0) {
         element[0].count += +document.getElementById("count-num").innerText;
 
-        cart_items.splice(userIndex, 1);
+        // cart_items.splice(userIndex, 1);
         let obj = {
           email: loginUser.email,
           cartItems: cartArray,
         };
-        cart_items.push(obj);
+        cart_items[userIndex] = obj;
         localStorage.setItem("cart_items", JSON.stringify(cart_items));
         displayCartCount();
 

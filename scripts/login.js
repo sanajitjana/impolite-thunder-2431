@@ -73,7 +73,7 @@ let loginFunction = (data, event) => {
         return elem;
       }
     });
-    if (res) {
+    if (res.length !== 0) {
       alert("Login successful!");
       let loginVal = res[0];
       localStorage.setItem("loginUser", JSON.stringify(loginVal));
@@ -88,5 +88,4 @@ let loginFunction = (data, event) => {
 let signupData = JSON.parse(localStorage.getItem("signupData")) || [];
 document.querySelector("form").addEventListener("submit", (e) => {
   loginFunction(signupData, e);
-  console.log(signupData);
 });

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>All Products - Lovoda</title>
+
+    <!-- favicon -->
+    <link
+      rel="shortcut icon"
+      href="https://cdn.shopify.com/s/files/1/0627/7388/7215/files/Favicon_32x32.jpg?v=1650456214"
+      type="image/x-icon"
+    />
+
+    <!-- custom css -->
+    <link rel="stylesheet" href="./styles/navbar.css" />
+    <link rel="stylesheet" href="./styles/footer.css" />
+    <link rel="stylesheet" href="./styles/product-list.css" />
+
+    <!-- font-awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css"
+      integrity="sha512-5A8nwdMOWrSz20fDsjczgUidUBR8liPYU+WymTZP1lmY9G6Oc7HlZv156XqnsgNUzTyMefFTcsFH/tnJE/+xBg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body>
+    <div id="navbar"></div>
+    <div id="container">
+      <div id="heading">
+        <h1>All Products</h1>
+      </div>
+      <div id="head-filter">
+        <div id="first-side" style="display: none">
+          <p>Filter:</p>
+          <div id="Price">
+            <p id="price-filter">
+              Price <i class="fa fa-angle-down" aria-hidden="true"></i>
+            </p>
+            <!-- Filter Popup -->
+            <div id="price-range">
+              <div id="price-head">
+                <p>The highest price is $95.00</p>
+                <p>reset</p>
+              </div>
+              <div id="price-input">
+                <p>
+                  $
+                  <input
+                    type="text"
+                    placeholder="From"
+                    class="price-input-box"
+                  />
+                </p>
+                <p>
+                  $
+                  <input type="text" placeholder="To" class="price-input-box" />
+                </p>
+              </div>
+            </div>
+            <!-- Filter Popup Ended-->
+          </div>
+          <div id="availibility">
+            <p>
+              Availability <i class="fa fa-angle-down" aria-hidden="true"></i>
+            </p>
+            <div id="stock-select">
+              <div id="select">
+                <p>0 Selected</p>
+                <p>reset</p>
+              </div>
+              <div id="stock">
+                <p><input type="checkbox" />In Stock</p>
+                <p><input type="checkbox" />Out of Stock</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Choose Option -->
+        <div id="left-head" style="width: 100%">
+          <div id="left-f">
+            <div><p>Sort by:</p></div>
+            <select id="selector">
+              <option value="Featured" selected>Featured</option>
+              <option value="Bestselling">Best Selling</option>
+              <option value="A-Z">Alphabetically, A-Z</option>
+              <option value="Z-A">Alphabetically, Z-A</option>
+              <option value="low-to-high">Price, low to high</option>
+              <option value="high-to-low">Price, high to low</option>
+              <option value="old-new">Date, old to new</option>
+              <option value="new-old">Date, new to old</option>
+            </select>
+          </div>
+          <div id="left-s"></div>
+        </div>
+      </div>
+      <div id="product-list">
+        <!-- Append the all Products Here -->
+      </div>
+
+      <div id="pages">
+        <a href="javascript:void(0)" class="page">1</a>
+        <a href="javascript:void(0)" class="page">2</a>
+        <a href="javascript:void(0)" class="page">3</a>
+        <a href="javascript:void(0)" class="page">...</a>
+        <a href="javascript:void(0)" class="page">23</a>
+        <span class="material-symbols-outlined"> </span>
+      </div>
+    </div>
+    <div id="footer"></div>
+  </body>
+  <script src="./scripts/shop-all.js" type="module"></script>
+</html>

@@ -14,10 +14,11 @@ logo.addEventListener("click", () => {
 //cart item count
 let cart_items = JSON.parse(localStorage.getItem("cart_items")) || [];
 let loginUser = JSON.parse(localStorage.getItem("loginUser")) || null;
-let sumCount = 0;
 
 let displayCartCount = () => {
   let total_cart_item = document.getElementById("total-cart-item");
+  let loginUser = JSON.parse(localStorage.getItem("loginUser")) || null;
+  let sumCount = 0;
   if (loginUser == null) {
     total_cart_item.innerText = sumCount;
   } else {
@@ -142,6 +143,7 @@ let addToCart = () => {
       // if id match catch the cart-item for increasing count
       if (element.length !== 0) {
         element[0].count += +document.getElementById("count-num").innerText;
+
         cart_items.splice(userIndex, 1);
         let obj = {
           email: loginUser.email,
@@ -150,6 +152,7 @@ let addToCart = () => {
         cart_items.push(obj);
         localStorage.setItem("cart_items", JSON.stringify(cart_items));
         displayCartCount();
+
         alert("product added to the cart");
       } else {
         // else puting the item with count = button counter
@@ -192,4 +195,10 @@ let addToCart = () => {
 let add_to_cart_btn = document.getElementById("add-to-cart");
 add_to_cart_btn.addEventListener("click", (e) => {
   addToCart();
+});
+
+// redirect to cart
+let redirect_to_cart = document.getElementById("wishlist");
+redirect_to_cart.addEventListener("click", (e) => {
+  window.location.href = "cart.html";
 });

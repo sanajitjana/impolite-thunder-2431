@@ -2,11 +2,22 @@ let subTotal = 0;
 let subTotalWithoutDiscount = 0;
 
 // product display function
-let displayProductList = (data) => {
-  if (!data) return;
-
+let displayProductList = (cart_items, loginUser) => {
+  if (!cart_items) return;
   let productList = document.getElementById("product-list");
   productList.innerHTML = "";
+
+  let elements = cart_items.filter((ele) => {
+    if (loginUser.email == ele.email) return ele;
+  });
+
+  let data = [];
+  for (let i = 0; i < elements.length; i++) {
+    let x = elements[i].cartItems;
+    for (let j = 0; j < x.length; j++) {
+      data.push(x[j]);
+    }
+  }
 
   data.forEach((element) => {
     let row = document.createElement("div");
@@ -19,7 +30,7 @@ let displayProductList = (data) => {
     p1.innerText = element.count;
 
     let img = document.createElement("img");
-    img.src = element.img;
+    img.src = element.image;
 
     img_box.append(p1, img);
 
@@ -41,8 +52,9 @@ let displayProductList = (data) => {
   });
 };
 
-let cart_items = JSON.parse(localStorage.getItem("cart_items")) || null;
-displayProductList(cart_items);
+let cart_items = JSON.parse(localStorage.getItem("cart_items")) || [];
+let loginUser = JSON.parse(localStorage.getItem("loginUser")) || null;
+displayProductList(cart_items, loginUser);
 
 // display total Amount of Checkout
 let displaySubTotal = () => {
@@ -151,8 +163,19 @@ let orders = JSON.parse(localStorage.getItem("orders")) || [];
 
 let checkoutFunction = (event) => {
   event.preventDefault();
-  if (!cart_items) {
-    alert("Please add some product to cart");
+
+  let elements = cart_items.filter((ele, index) => {
+    if (loginUser.email == ele.email) {
+      return ele;
+    }
+  });
+  let flag = false;
+  for (let i = 0; i < elements.length; i++) {
+    let x = elements[i].cartItems;
+    if (x.length > 0) flag = true;
+  }
+  if (flag == false) {
+    alert("Please select a cart item first");
     return;
   }
 
@@ -206,14 +229,15 @@ let checkoutFunction = (event) => {
         let newOrders = {
           order_id: randNum,
           email: loginUserLS.email,
-          first_name: loginUserLS.first_name,
-          last_name: loginUserLS.last_name,
           shippingAddress: shippingAddress,
           orderItems: cart_items,
         };
         orders.push(newOrders);
         localStorage.setItem("orders", JSON.stringify(orders));
         localStorage.removeItem("cart_items");
+        localStorage.removeItem("discountAmount");
+        localStorage.removeItem("cuponApply");
+        localStorage.removeItem("discountSubTotal");
         alert("Congratulations! your orders will be sent to your address");
         flag = true;
       } else {

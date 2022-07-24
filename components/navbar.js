@@ -23,7 +23,7 @@ let navbar = () => {
       <a href="necklaces.html">Necklaces</a>
       <a href="bracelets.html">Bracelets</a>
       <a href="rings.html">Rings</a>
-      <a href="shop-special.html">Shop Special</a>
+      <a href="javascript:void(0)">Shop Special</a>
     </div>
   </div>
   <div id="right-icons">

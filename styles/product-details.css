@@ -143,6 +143,7 @@ body {
   border: 1px solid rgba(123, 123, 123, 0.75);
   display: flex;
   align-items: center;
+  margin-bottom: 30px;
 }
 #counter button {
   margin: auto;
@@ -160,6 +161,18 @@ body {
 #counter button:last-child {
   font-size: 22px;
   cursor: pointer;
+}
+#continue-shopping {
+  width: fit-content;
+  text-align: end;
+  text-decoration: none;
+  color: #121212;
+  border-bottom: 1px solid #121212;
+}
+#continue-shopping:hover {
+  cursor: pointer;
+  border: none;
+  border-bottom: 2px solid #121212;
 }
 #add-to-cart {
   display: block;
